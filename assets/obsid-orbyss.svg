@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ORBYSS premium SVG visual: stylized crystalline core with tendrils and shards -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <radialGradient id="g1" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#c084fc" stop-opacity="0.85"/>
+      <stop offset="65%" stop-color="#06b6d4" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#020317" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#04040a"/>
+  <g transform="translate(200,120)">
+    <circle cx="400" cy="200" r="160" fill="url(#g1)" filter="url(#f1)" />
+    <!-- shards -->
+    <g fill="url(#g2)" opacity="0.92">
+      <path d="M480 80 L560 140 L520 220 L420 200 Z" opacity="0.9"/>
+      <path d="M300 40 L360 120 L320 210 L240 180 Z" opacity="0.85"/>
+      <path d="M600 260 L700 280 L680 360 L580 340 Z" opacity="0.7"/>
+    </g>
+    <!-- tendrils -->
+    <g stroke="rgba(110,230,255,0.85)" stroke-width="2" fill="none" opacity="0.9">
+      <path d="M400 40 C480 60, 580 20, 660 60" stroke-linecap="round"/>
+      <path d="M400 40 C320 80, 220 40, 140 80" stroke-linecap="round"/>
+      <path d="M400 360 C480 300, 620 320, 700 360" stroke-linecap="round"/>
+    </g>
+    <!-- core sparkle -->
+    <g transform="translate(400,200)">
+      <circle r="18" fill="#fff"/>
+      <circle r="48" fill="none" stroke="#a855f7" stroke-width="2" opacity="0.9"/>
+      <circle r="88" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.6"/>
+    </g>
+  </g>
+  <text x="48" y="740" fill="#cfe0ff" font-family="Inter, Arial" font-size="22">ORBYSS — living core • reactive visualisation</text>
+</svg>

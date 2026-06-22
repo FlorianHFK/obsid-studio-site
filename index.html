@@ -3,202 +3,232 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OBSID-Studio — Local AI Creative Studio</title>
-  <meta name="description" content="OBSID-Studio transforme l'IA locale chaotique en studio créatif local-first : moteurs IA, projets, outputs, workflows, mémoire, ORBYSS et contrôle local.">
+  <title>OBSID‑Studio — Local AI Creative Studio</title>
+  <meta name="description" content="OBSID‑Studio transforme l'IA locale chaotique en un studio créatif local‑first : moteurs locaux, workflows réutilisables, outputs traçables et ORBYSS—le cœur vivant du studio.">
   <link rel="canonical" href="https://florianhfk.github.io/obsid-studio-site/">
-  <meta property="og:title" content="OBSID-Studio — Local AI Creative Studio">
-  <meta property="og:description" content="Arrête de te perdre dans tes moteurs IA locaux. OBSID-Studio transforme ton PC en studio créatif local-first.">
+  <meta property="og:title" content="OBSID‑Studio — Local AI Creative Studio">
+  <meta property="og:description" content="Arrête de te perdre dans tes moteurs IA locaux. OBSID organise, trace et transforme tes idées en livrables." />
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#03040b">
+  <meta name="theme-color" content="#070918">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta name="keywords" content="local ai, creative studio, OBSID, ORBYSS, ComfyUI, local-first, prompts, outputs">
+  <meta name="keywords" content="local ai, creative studio, OBSID, ORBYSS, ComfyUI, Forge, LM Studio, Ollama, TTS, workflows, outputs">
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "OBSID-Studio",
-    "url": "https://florianhfk.github.io/obsid-studio-site/",
-    "description": "Studio créatif local-first pour orchestrer moteurs IA, projets et outputs.",
-    "publisher": {
-      "@type": "Person",
-      "name": "Florian HFK"
-    }
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"OBSID‑Studio",
+    "url":"https://florianhfk.github.io/obsid-studio-site/",
+    "description":"Studio créatif local‑first pour orchestrer moteurs IA, projets et outputs.",
+    "publisher": {"@type":"Person","name":"Florian HFK"}
   }
   </script>
   <style>
-    :root{--bg:#03040b;--txt:#f4f8ff;--muted:#a7b4cd;--cyan:#06d6ff;--violet:#a855f7;--max:1520px;--r:28px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--txt);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#02030a,#03040b);}
+    :root{--bg:#03040b;--txt:#f4f8ff;--muted:#a7b4cd;--cyan:#06d6ff;--violet:#a855f7;--amber:#f59e0b;--max:1440px;--r:20px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--txt);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#02030a 0%,#03040b 100%);}
     a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
     .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
-    header.nav{position:sticky;top:0;background:rgba(3,4,11,.78);backdrop-filter:blur(8px);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-    .navin{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    header{position:sticky;top:0;backdrop-filter:blur(8px);background:rgba(3,4,11,.6);border-bottom:1px solid rgba(255,255,255,.04);z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand small{display:block;color:var(--muted);font-size:.72rem}
-    .links{display:flex;gap:18px;color:#cbd7ef}
+    .brand img{width:40px;height:40px}
+    .links{display:flex;gap:20px;color:#cbd7ef;font-weight:700}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#06b6d4);color:#fff;font-weight:800}
-    .hero{min-height:72vh;display:grid;align-items:center;padding:56px 0}
-    h1{font-size:clamp(2rem,5vw,4rem);margin:0;line-height:1.02}
-    .lead{color:var(--muted);max-width:72ch;margin-top:18px}
-    .actions{margin-top:22px;display:flex;gap:12px}
-    .stage{border-radius:20px;padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));box-shadow:0 24px 60px rgba(0,0,0,.6)}
-    section{padding:56px 0}
-    .glass{border:1px solid rgba(255,255,255,.04);border-radius:18px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
-    .proof{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .hero{min-height:84vh;display:grid;align-items:center;padding:60px 0}
+    .hero-grid{display:grid;grid-template-columns:1fr 520px;gap:36px;align-items:center}
+    .eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.14em;font-weight:800}
+    h1{font-size:clamp(2.4rem,5vw,4.8rem);margin:12px 0 6px;line-height:1.02}
+    .lead{color:var(--muted);max-width:64ch;font-size:1.06rem}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.03);font-weight:800}
+    .stage{border-radius:18px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));box-shadow:0 28px 90px rgba(0,0,0,.6)}
+    section{padding:64px 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .glass{border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.01),transparent)}
     .badge{background:rgba(255,255,255,.03);padding:8px 12px;border-radius:999px;font-weight:800}
-    .form{max-width:720px}
-    label{display:block;margin-bottom:6px;font-weight:700}
-    input,textarea,select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.25);color:var(--txt)}
-    footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.04)}
-    @media(max-width:720px){.navin{flex-direction:column;align-items:flex-start}.hero{padding:36px 0}}
+    .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .modules{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .orbyss-visual{display:grid;place-items:center}
+    .footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.04);color:var(--muted)}
+    @media(max-width:1000px){.hero-grid{grid-template-columns:1fr;gap:26px}.cap-grid{grid-template-columns:repeat(2,1fr)}.modules{grid-template-columns:1fr}}
+    @media(max-width:720px){.wrap{width:calc(100% - 28px)}.links{display:none}.hero{padding:36px 0}}
   </style>
 </head>
 <body>
-<header class="nav">
-  <div class="wrap navin">
-    <a class="brand" href="#top" aria-label="OBSID-Studio accueil"><img src="assets/favicon.svg" alt="OBSID" width="36" height="36" style="border-radius:8px"/> <span>OBSID‑Studio <small>Local AI Creative Studio</small></span></a>
-    <nav class="links" aria-label="Navigation principale">
-      <a href="#produit">Produit</a>
-      <a href="#probleme">Problème</a>
-      <a href="#solution">Solution</a>
-      <a href="#waitlist">Accès privé</a>
-    </nav>
-    <a class="btn" href="#waitlist">Rejoindre la preview</a>
-  </div>
-</header>
-<main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <div style="display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center">
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top"><img src="assets/favicon.svg" alt="OBSID"/><span>OBSID‑Studio <small style="display:block;color:var(--muted)">Local AI Creative Studio</small></span></a>
+      <nav class="links" aria-label="Navigation principale">
+        <a href="#produit">Produit</a>
+        <a href="#modules">Modules</a>
+        <a href="#orbyss">ORBYSS</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#waitlist">Accès privé</a>
+      </nav>
+      <a class="btn" href="#waitlist">Rejoindre la preview</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
         <div>
-          <div style="color:var(--cyan);text-transform:uppercase;font-weight:800;letter-spacing:.14em">Founder Preview — Invitation limitée</div>
-          <h1>Arrête de perdre du temps à configurer tes moteurs locaux. Donne-leur un studio.</h1>
-          <p class="lead">OBSID‑Studio transforme ton PC en studio créatif local‑first : découverte des moteurs, orchestration de flux, indexation d'outputs, gestion de projets, mémoire de prompts et un cœur vivant — ORBYSS — qui rend l'état du système lisible et utile.</p>
-          <div class="actions">
-            <a class="btn" href="#waitlist">Demander l'accès privé</a>
+          <div class="eyebrow">Founder Preview — places limitées</div>
+          <h1>OBSID‑Studio — Un studio IA local‑first qui organise, trace et transforme tes idées en livrables.</h1>
+          <p class="lead">Arrête de te perdre dans les modèles, ports et scripts : OBSID relie tes moteurs locaux (ComfyUI, Forge, LM Studio, Ollama, TTS), orchestre des workflows réutilisables, indexe les outputs avec métadonnées et garde une mémoire projet exploitable.</p>
+          <div style="margin-top:18px;display:flex;gap:12px">
+            <a class="btn" href="#waitlist">Rejoindre l’accès privé</a>
             <a class="btn" href="#demo" style="background:transparent;border:1px solid rgba(255,255,255,.06)">Voir la démo</a>
           </div>
-          <div class="proof"><span class="badge">Local‑first</span><span class="badge">Outputs traçables</span><span class="badge">ORBYSS living core</span><span class="badge">Preview limitée</span></div>
-        </div>
-        <div class="stage" aria-hidden="true">
-          <img src="assets/obsid-studio-cockpit.svg" alt="Aperçu cockpit OBSID" style="width:100%;height:auto;border-radius:12px"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="produit">
-    <div class="wrap">
-      <h2>Une interface qui rend la puissance locale utilisable</h2>
-      <p class="lead">Un cockpit qui relie moteurs, projets, outputs et mémoire. OBSID n'est pas un moteur : c'est le studio qui organise, trace et réutilise.</p>
-    </div>
-  </section>
-
-  <section id="probleme">
-    <div class="wrap">
-      <h2>Le vrai problème</h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px">
-        <div class="glass"><strong>Trop technique</strong><p>Nodes, modèles, ports, scripts, dépendances — l'ergonomie fait défaut.</p></div>
-        <div class="glass"><strong>Trop fragmenté</strong><p>ComfyUI, LM Studio, Ollama… chaque brique vit dans son coin.</p></div>
-        <div class="glass"><strong>Trop dur à réutiliser</strong><p>Prompts perdus, outputs sans métadonnées, variations introuvables.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="solution">
-    <div class="wrap">
-      <h2>La solution</h2>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px">
-        <div class="glass"><strong>01</strong><p>Détecter moteurs et états</p></div>
-        <div class="glass"><strong>02</strong><p>Créer: image, vidéo, son, texte</p></div>
-        <div class="glass"><strong>03</strong><p>Ranger: thumbnails, metadata</p></div>
-        <div class="glass"><strong>04</strong><p>Réutiliser: prompts, presets</p></div>
-        <div class="glass"><strong>05</strong><p>Exporter: packs & livrables</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="waitlist">
-    <div class="wrap">
-      <h2>Rejoindre l'accès privé</h2>
-      <p class="lead">Places limitées. Pas de spam — seulement annonces importantes (démo, Founder Preview, lancement).</p>
-      <form id="waitlist-form" class="form" aria-label="Formulaire d'inscription à la liste d'attente">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div>
-            <label for="name">Nom</label>
-            <input id="name" name="name" type="text" required placeholder="Ton nom">
+          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+            <span class="pill">Local‑first</span>
+            <span class="pill">Outputs traçables</span>
+            <span class="pill">ORBYSS living core</span>
+            <span class="pill">Workflows & presets</span>
           </div>
+          <p style="margin-top:18px;color:var(--muted)">Prototype en maturation — Founder Preview limitée. Nous cherchons des créateurs pour tester les premiers flux, donner du feedback et co‑construire.</p>
+        </div>
+        <div class="stage orbyss-visual">
+          <!-- premium ORBYSS visual (SVG) -->
+          <img src="assets/obsid-orbyss.svg" alt="ORBYSS living core visual" style="width:100%;height:auto"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="produit">
+      <div class="wrap">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:18px">
           <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="toi@email.com">
+            <h2>Ce que fait OBSID‑Studio</h2>
+            <p class="lead">Un cockpit local qui rend la génération (image, vidéo, musique, voix, texte) exploitable : orchestration, presets, gallery, versions, tâches, et export packagé pour clients.</p>
+          </div>
+          <div style="max-width:420px;text-align:right">
+            <div class="badge">Engine Health</div>
+            <p style="color:var(--muted);margin-top:8px">Statut moteur réel : installé / absent / lancé / bloqué / preuve disponible — diagnostic automatique et actions guidées.</p>
           </div>
         </div>
-        <div style="margin-top:12px">
-          <label for="profile">Profil</label>
-          <select id="profile" name="profile">
-            <option>Créateur</option><option>Freelance</option><option>Agence</option><option>Musicien</option><option>Maker IA</option><option>Entreprise</option><option>Autre</option>
-          </select>
-        </div>
-        <div style="margin-top:12px">
-          <label for="goal">Ce que tu veux produire</label>
-          <textarea id="goal" name="goal" placeholder="Visuels, packs clients, vidéo, musique, workflows..."></textarea>
-        </div>
-        <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
-          <input id="founder" type="checkbox" name="founderInterest" value="yes"><label for="founder">Je veux être prévenu pour la Founder Preview.</label>
-        </div>
-        <p style="margin-top:12px;color:var(--muted);font-size:.92rem">Formulaire local : si vous n'utilisez pas un backend, ce formulaire ouvre votre messagerie pour envoyer les infos. Les données ne sont pas stockées sur ce site.</p>
-        <button type="submit" class="btn" style="margin-top:14px">Demander l'accès privé</button>
-      </form>
-    </div>
-  </section>
 
-  <section id="faq">
-    <div class="wrap">
-      <h2>FAQ</h2>
-      <details><summary>OBSID-Studio est-il juste un générateur IA ?</summary><p>Non. La génération est une couche. OBSID vise l'organisation, la réutilisation, les projets et la traçabilité des outputs.</p></details>
-      <details><summary>Est-ce un cloud ?</summary><p>Non. Local-first. Des intégrations externes pourront exister plus tard, mais le coeur vise le contrôle local.</p></details>
-    </div>
-  </section>
-</main>
+        <div style="margin-top:28px" class="cap-grid">
+          <div class="glass"><h3>Creative Engines</h3><p>Images, vidéo, musique, voix, texte — pipelines locaux orchestrés et préconfigurés.</p></div>
+          <div class="glass"><h3>Projects & Outputs</h3><p>Galerie, thumbnails, metadata, recherche et historique projet.</p></div>
+          <div class="glass"><h3>Workflow Vault</h3><p>Presets, templates, chaînes réutilisables pour production rapide.</p></div>
+          <div class="glass"><h3>Local Assistants</h3><p>Guides, assistants de style et agents batch pour automatiser et documenter.</p></div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div><strong>OBSID‑Studio</strong><div style="color:var(--muted);font-size:.92rem">Prototype — Founder Preview</div></div>
+    <section id="modules" class="section">
+      <div class="wrap">
+        <h2>Modules & intégrations</h2>
+        <p class="lead">OBSID connecte et supervise les outils locaux que tu utilises déjà :</p>
+        <div class="modules" style="margin-top:18px">
+          <div class="glass"><strong>Engines</strong><p>ComfyUI, Forge, LM Studio, Ollama, TTS/STT, outils vidéo et audio locaux.</p></div>
+          <div class="glass"><strong>MCP / Tool Bridge</strong><p>Contrôle et permissions pour interagir avec applications locales et fichiers.</p></div>
+          <div class="glass"><strong>Agents & Store</strong><p>Magasin de générateurs, presets, agents automatisés et packs (Generator Store).</p></div>
+        </div>
+
+        <div style="margin-top:22px" class="glass">
+          <h3>Boucle d’intelligence</h3>
+          <p>OBSID orchestre la boucle : OBSERVE → ANALYZE → PREDICT → ADAPT → ACT → LEARN — pour garder ton studio robuste, stable et productif.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="orbyss" class="section">
+      <div class="wrap">
+        <div style="display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center">
+          <div>
+            <h2>ORBYSS — le cœur vivant</h2>
+            <p class="lead">ORBYSS n’est pas une décoration : c’est une visualisation réactive et cristalline de l’état du studio — tensions, flux, génération, erreurs et récupération. Elle rend lisible l’invisible.</p>
+            <ul style="margin-top:12px;color:var(--muted)">
+              <li><strong>Visuel</strong> : shards, tendrils, noyau — montre l’activité et les priorités.</li>
+              <li><strong>Interactif</strong> : clique pour debugger, redémarrer un moteur ou voir la preuve d’un output.</li>
+              <li><strong>Analytiques</strong> : historique d’état, heatmap d’utilisation, causes de blocage.</li>
+            </ul>
+          </div>
+          <div class="stage">
+            <img src="assets/obsid-studio-cockpit.svg" alt="Cockpit preview" style="width:100%;height:auto;border-radius:12px"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="generators" class="section">
+      <div class="wrap">
+        <h2>Generator Store & agents</h2>
+        <p class="lead">Conserver et distribuer presets, agents d’automatisation et chaînes de génération. Installe/active un generator pour une tâche spécifique (ex : Portrait‑AI, Soundscape loop, Voice pack).</p>
+        <div style="margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+          <div class="glass"><h4>Agents</h4><p>Automatisations locales : batch export, variations, A/B prompts, monitoring.</p></div>
+          <div class="glass"><h4>Store</h4><p>Templates premium, presets stylistiques, packs white‑label pour clients.</p></div>
+          <div class="glass"><h4>Integration</h4><p>Installer, mettre à jour, vérifier signatures et dépendances locales.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <div class="wrap">
+        <h2>Roadmap</h2>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px">
+          <div class="glass"><strong>01</strong><p>Prototype & preuves</p></div>
+          <div class="glass"><strong>02</strong><p>Landing & démo vidéo</p></div>
+          <div class="glass"><strong>03</strong><p>ORBYSS runtime & UX</p></div>
+          <div class="glass"><strong>04</strong><p>Generator Store & agents</p></div>
+          <div class="glass"><strong>05</strong><p>Founder Preview -> Beta</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="waitlist" class="section">
+      <div class="wrap">
+        <h2>Rejoindre l’accès privé</h2>
+        <p class="lead">Places limitées. Pas de spam — seulement annonces cruciales : démo, Founder Preview, packs.</p>
+        <form id="waitlist-form" class="form-box" aria-label="Formulaire d'inscription" style="max-width:760px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div><label for="name">Nom</label><input id="name" name="name" type="text" required placeholder="Ton nom"></div>
+            <div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="email@example.com"></div>
+          </div>
+          <div style="margin-top:12px"><label for="profile">Profil</label><select id="profile" name="profile"><option>Créateur</option><option>Freelance</option><option>Agence</option><option>Musicien</option><option>Maker IA</option><option>Entreprise</option><option>Autre</option></select></div>
+          <div style="margin-top:12px"><label for="goal">Ce que tu veux produire</label><textarea id="goal" name="goal" placeholder="Visuels, packs clients, vidéo, musique, workflows..."></textarea></div>
+          <div style="margin-top:10px"><label><input id="founderInterest" type="checkbox" name="founderInterest" value="yes"> Je veux être prévenu pour la Founder Preview.</label></div>
+          <button class="btn" type="submit" style="margin-top:14px">Demander l'accès privé</button>
+        </form>
+        <p style="margin-top:12px;color:var(--muted)">Le formulaire ouvre votre client mail (capture mailto). Pour capturer automatiquement, nous connecterons bientôt un backend sécurisé.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="wrap">
+        <h2>FAQ</h2>
+        <details style="margin-top:12px"><summary>OBSID est‑il juste un générateur ?</summary><p>Non — OBSID est un studio : orchestration, mémoire, projets, presets et outputs traçables.</p></details>
+        <details style="margin-top:8px"><summary>Le positionnement ?</summary><p>Local‑first, contrôle total, exportable et portable — pas un cloud déguisé.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+      <div><strong>OBSID‑Studio</strong><div style="color:var(--muted)">Prototype — Founder Preview</div></div>
       <div style="color:var(--muted)"><a href="https://github.com/FlorianHFK/obsid-studio-site">Repository</a> · <a href="https://florianhfk.github.io/obsid-studio-site/">Live</a></div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<noscript><div style="position:fixed;left:0;right:0;top:0;background:#ffefc2;color:#000;padding:12px;text-align:center">JavaScript est désactivé — pour finaliser l'inscription la messagerie s'ouvrira automatiquement pour envoyer vos informations.</div></noscript>
+  <noscript><div style="position:fixed;left:0;right:0;top:0;background:#ffefc2;color:#000;padding:12px;text-align:center">JavaScript est désactivé — le formulaire ouvrira votre client mail.</div></noscript>
 
-<script>
-// Waitlist submission: open mail client with prefilled content and redirect to success page
-document.getElementById('waitlist-form').addEventListener('submit', function(e){
-  e.preventDefault();
-  const name = encodeURIComponent(document.getElementById('name').value.trim());
-  const email = encodeURIComponent(document.getElementById('email').value.trim());
-  const profile = encodeURIComponent(document.getElementById('profile').value);
-  const goal = encodeURIComponent(document.getElementById('goal').value.trim());
-  const founder = document.getElementById('founder').checked ? 'Oui' : 'Non';
-
-  if(!name || !email){ alert('Veuillez renseigner votre nom et email.'); return; }
-
-  const subject = `OBSID Waitlist — ${name}`;
-  const body = `Nom: ${name}%0AEmail: ${email}%0AProfil: ${profile}%0AFounder Preview: ${founder}%0A%0AObjectif:%0A${goal}`;
-  // replace the contact email with your preferred inbox
-  const contact = 'founders@obsid-studio.example';
-  const mailto = `mailto:${contact}?subject=${encodeURIComponent(subject)}&body=${body}`;
-  // Try opening mail client then redirect to thank you
-  window.location.href = mailto;
-  // After attempting to open mail client, still redirect to success page
-  setTimeout(()=>{ window.location.href = 'waitlist-success.html'; }, 1200);
-});
-
-// Small intersection observer for reveal elements (progressive)
-const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=> { if(e.isIntersecting) e.target.classList.add('show'); }); },{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
+  <script>
+  document.getElementById('waitlist-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = (document.getElementById('name').value||'').trim();
+    const email = (document.getElementById('email').value||'').trim();
+    if(!name||!email){ alert('Veuillez renseigner votre nom et email.'); return; }
+    const profile = document.getElementById('profile').value||'';
+    const goal = document.getElementById('goal').value||'';
+    const founder = document.getElementById('founderInterest').checked? 'Oui':'Non';
+    const subject = `OBSID Waitlist — ${name}`;
+    const body = `Nom: ${name}%0AEmail: ${email}%0AProfil: ${profile}%0AFounder: ${founder}%0A%0AObjectif:%0A${encodeURIComponent(goal)}`;
+    const contact = 'hachefk23@gmail.com';
+    window.location.href = `mailto:${contact}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    setTimeout(()=>{ window.location.href='waitlist-success.html'; },1200);
+  });
+  </script>
 </body>
 </html>

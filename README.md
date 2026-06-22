@@ -1,53 +1,40 @@
-# OBSID‑Studio — Landing & Preview
+# OBSID‑Studio — Landing & Product Preview
 
-Projet : landing page pour OBSID‑Studio — studio créatif local‑first pour moteurs IA.
+OBSID‑Studio est un prototype de studio créatif local‑first — un cockpit pour rendre l'IA locale puissante, claire et réutilisable. Ce dépôt contient la landing page (preview) qui présente la vision produit et la Founder Preview.
 
-Live demo
+Pourquoi OBSID‑Studio ?
+- Parce que l'IA locale est puissante mais fragmentée : modèles, interfaces, scripts et outputs se perdent.
+- OBSID organise tes moteurs locaux (ComfyUI, Forge, LM Studio, Ollama, TTS/STT), orchestre des workflows, indexe les outputs et garde une mémoire projet réutilisable.
+- ORBYSS est le "living core" : une représentation visuelle et interactive de l'état du studio — utile pour diagnostiquer et décider.
 
-- Site publié via GitHub Pages : https://florianhfk.github.io/obsid-studio-site/
-
-Résumé rapide
-
-OBSID‑Studio est une landing page (prototype V2 IMPACT) qui présente la vision d'un studio local pour la création assistée par IA : détection de moteurs, orchestration de flux, indexation d'outputs, mémoire de prompts, et "ORBYSS" comme cœur visuel vivant.
+Ce que montre la landing
+- Vision produit : cockpit, ORBYSS, modules, Engine Health, Generator Store et agents.
+- Parcours créateur : de l'idée au livrable (prompt → moteur → output indexé → packs exportables).
+- Roadmap et statut de la Founder Preview.
 
 Contenu du dépôt
+- `index.html` — landing page complète, responsive, prête pour GitHub Pages.
+- `waitlist-success.html` — page de remerciement locale.
+- `404.html` — redirection simple vers la racine.
+- `assets/` — images et SVG (favicon, ORBYSS visual, cockpit preview, OG image placeholder).
+- `LICENSE` — MIT.
 
-- `index.html` — page principale (CSS embarqué pour déploiement simple)
-- `waitlist-success.html` — page de remerciement locale
-- `404.html` — redirection vers la racine
-- `robots.txt`
-- `assets/` — images et icônes (favicon, og-image, cockpit preview svg)
-- `LICENSE` — MIT
+État actuel
+- Landing page complète et professionnelle sur la branche `v2-restore-improve`.
+- Placeholders visuels remplacés par SVG premium pour un rendu cohérent. Idéalement, remplacez ensuite par exports PNG/WebP optimisés pour OG previews.
+- Formulaire waitlist utilise `mailto:` pour ouvrir le client mail (aucune dépendance externe requise).
 
-Pourquoi cette licence ?
+Prochaines étapes recommandées
+1. Remplacer les SVG placeholders par assets graphiques finaux (PNG/WebP) pour OG et images produit (si disponibles).
+2. Ajouter une image OG (1200×630 PNG) pour un rendu social optimal.
+3. Mettre en place un backend sécurisé (optionnel) ou un service Forms pour capturer automatiquement les inscriptions.
+4. Ajouter une page Media/Press kit et assets téléchargeables.
 
-Vous m'avez demandé de protéger l'idée/projet : la licence MIT protège la réutilisation du code en exigeant que le copyright et la licence restent attachés, sans interdire la publication. Si vous préférez une licence plus restrictive (ex: All Rights Reserved ou Creative Commons non commerciale), dites-le.
-
-Formulaire et collecte des inscriptions
-
-- Le formulaire de la page utilise un comportement local : il ouvre votre client mail avec un message pré-rempli (mailto:). Cela évite d'exposer des services externes et respecte votre souhait de ne pas utiliser Netlify.
-- Pour un stockage automatique et professionnel (base de données, notifications), nous pouvons connecter un backend ou utiliser un service Forms à l'avenir.
-
-Mises à jour proposées / prochaines étapes
-
-- Ajouter une vraie image OG (1200×630) en PNG/WebP pour un rendu optimal sur réseaux sociaux — j'ai ajouté une SVG placeholder (`assets/og-image.svg`) que vous pouvez remplacer par une export PNG.
-- Intégrer un petit backend (optionnel) pour capturer les e-mails de la waitlist. Sans backend, le mailto est fiable mais demande aux utilisateurs d'envoyer manuellement.
-- Ajouter une page de presse / media kit et un lien de contact pour partenaires.
-
-Metadonnées GitHub & conseils
-
-- Dans la page Settings du repo, mettez :
-  - Description courte : "Landing — OBSID‑Studio — Local AI Creative Studio"
-  - Website / homepage : https://florianhfk.github.io/obsid-studio-site/
-  - Topics : obsid, local-ai, studio, orbyss, creative
+Déploiement
+- Hébergement recommandé : GitHub Pages (aucune dépendance externe nécessaire). Le site est compatible et autonome.
 
 Licence
+- MIT (fichier `LICENSE` inclus).
 
-- Licence ajoutée : MIT. Le code est protégé par la licence ; l'idée conceptuelle restant générale ne peut pas être complètement « volée » par licence, mais le code et les ressources le sont.
-
-Si vous voulez que je :
-- remplace l'image OG SVG par un PNG exporté (je peux générer un SVG amélioré ou vous pouvez fournir un PNG),
-- ajoute un workflow GitHub Actions pour vérifier la présence d'assets et build,
-- créer une branche PR au lieu de pousser sur main — dites le mot.
-
-Merci — j'ai appliqué les améliorations de contenu et ajouté la licence MIT. Si vous voulez un rendu encore plus professionnel (animations, microinteractions, A/B wording pour CTA, copywriting de vente), je peux faire plusieurs variantes et tests A/B.
+Feedback
+- Cette branche est destinée à préparation et relecture — je n'ai pas encore ouvert la Pull Request. Remplacez les images si vous avez des versions finales ; je m'occupe ensuite d'ouvrir la PR et d'itérer.
