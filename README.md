@@ -21,7 +21,7 @@ OBSID-Studio is a premium cockpit for local AI creation.
 
 It turns scattered local engines into a clear product experience for image, video, music, voice, text, workflows, outputs and local agents.
 
-<p align="center"><img src="assets/readme-preview.svg" alt="OBSID preview" width="100%"></p>
+<p align="center"><img src="assets/real-studio-preview.svg" alt="OBSID-Studio real preview extracted from funding pack" width="100%"></p>
 
 ## Product architecture
 
