@@ -3,202 +3,194 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OBSID-Studio — Local AI Creative Studio</title>
-  <meta name="description" content="OBSID-Studio transforme l'IA locale chaotique en studio créatif local-first : moteurs IA, projets, outputs, workflows, mémoire, ORBYSS et contrôle local.">
+  <title>OBSID-Studio — Studio IA local-first premium</title>
+  <meta name="description" content="OBSID-Studio transforme tes moteurs IA locaux en studio créatif portable : image, vidéo, musique, voix, texte, workflows, outputs, agents et ORBYSS comme cœur vivant.">
   <link rel="canonical" href="https://florianhfk.github.io/obsid-studio-site/">
-  <meta property="og:title" content="OBSID-Studio — Local AI Creative Studio">
-  <meta property="og:description" content="Arrête de te perdre dans tes moteurs IA locaux. OBSID-Studio transforme ton PC en studio créatif local-first.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-image.svg">
+  <meta property="og:title" content="OBSID-Studio — Studio IA local-first premium">
+  <meta property="og:description" content="Un cockpit créatif local-first pour piloter moteurs IA, workflows, outputs, agents et ORBYSS.">
+  <meta property="og:image" content="https://florianhfk.github.io/obsid-studio-site/assets/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#03040b">
+  <meta name="theme-color" content="#080616">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta name="keywords" content="local ai, creative studio, OBSID, ORBYSS, ComfyUI, local-first, prompts, outputs">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "OBSID-Studio",
-    "url": "https://florianhfk.github.io/obsid-studio-site/",
-    "description": "Studio créatif local-first pour orchestrer moteurs IA, projets et outputs.",
-    "publisher": {
-      "@type": "Person",
-      "name": "Florian HFK"
-    }
-  }
-  </script>
   <style>
-    :root{--bg:#03040b;--txt:#f4f8ff;--muted:#a7b4cd;--cyan:#06d6ff;--violet:#a855f7;--max:1520px;--r:28px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--txt);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#02030a,#03040b);}
-    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
-    .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
-    header.nav{position:sticky;top:0;background:rgba(3,4,11,.78);backdrop-filter:blur(8px);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-    .navin{display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand small{display:block;color:var(--muted);font-size:.72rem}
-    .links{display:flex;gap:18px;color:#cbd7ef}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#06b6d4);color:#fff;font-weight:800}
-    .hero{min-height:72vh;display:grid;align-items:center;padding:56px 0}
-    h1{font-size:clamp(2rem,5vw,4rem);margin:0;line-height:1.02}
-    .lead{color:var(--muted);max-width:72ch;margin-top:18px}
-    .actions{margin-top:22px;display:flex;gap:12px}
-    .stage{border-radius:20px;padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));box-shadow:0 24px 60px rgba(0,0,0,.6)}
-    section{padding:56px 0}
-    .glass{border:1px solid rgba(255,255,255,.04);border-radius:18px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
-    .proof{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .badge{background:rgba(255,255,255,.03);padding:8px 12px;border-radius:999px;font-weight:800}
-    .form{max-width:720px}
-    label{display:block;margin-bottom:6px;font-weight:700}
-    input,textarea,select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.25);color:var(--txt)}
-    footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.04)}
-    @media(max-width:720px){.navin{flex-direction:column;align-items:flex-start}.hero{padding:36px 0}}
+    :root{
+      --bg:#05050b;--bg2:#0b0818;--panel:#101022;--panel2:#16132b;--text:#f5f7ff;--muted:#a8b2cf;
+      --violet:#9b5cff;--cyan:#00d9ff;--pink:#ff4fd8;--blue:#4169ff;--green:#4fffb0;--amber:#ffc857;
+      --line:rgba(255,255,255,.11);--soft:rgba(255,255,255,.07);--shadow:0 30px 100px rgba(0,0,0,.55);--max:1180px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 20% 0%,rgba(155,92,255,.22),transparent 32%),radial-gradient(circle at 80% 8%,rgba(0,217,255,.18),transparent 30%),linear-gradient(180deg,#03040a 0%,#080616 48%,#05050b 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,rgba(0,0,0,.65),transparent 75%);z-index:-1}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.mini{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:900}.muted{color:var(--muted)}
+    .nav{position:sticky;top:0;z-index:30;background:rgba(5,5,12,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--soft)}.navin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:12px;font-weight:950}.logo{width:38px;height:38px;border-radius:12px;background:conic-gradient(from 180deg,var(--cyan),var(--violet),var(--pink),var(--cyan));box-shadow:0 0 30px rgba(0,217,255,.35);position:relative}.logo:after{content:"";position:absolute;inset:9px;border-radius:7px;background:#080616}.brand small{display:block;color:var(--muted);font-weight:700;margin-top:-3px}.links{display:flex;gap:20px;color:#d7ddf2;font-size:.95rem;font-weight:750}.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:999px;font-weight:950;background:linear-gradient(135deg,var(--violet),var(--cyan));box-shadow:0 10px 35px rgba(0,217,255,.18)}.ghost{background:rgba(255,255,255,.04);border:1px solid var(--line);box-shadow:none}
+    .hero{padding:74px 0 44px}.heroGrid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}.hero h1{font-size:clamp(2.75rem,6vw,6.2rem);line-height:.92;margin:14px 0 20px;letter-spacing:-.07em}.lead{font-size:clamp(1.05rem,1.5vw,1.26rem);color:#c8d2ec;max-width:68ch}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-weight:850;color:#eef3ff;font-size:.9rem}.proofbar{margin-top:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.proof{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:14px}.proof b{display:block;font-size:1.2rem}.visual{position:relative;border:1px solid rgba(255,255,255,.12);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));box-shadow:var(--shadow);padding:18px;overflow:hidden}.visual:before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle,rgba(0,217,255,.22),transparent 28%),radial-gradient(circle at 70% 30%,rgba(255,79,216,.18),transparent 25%);filter:blur(22px);animation:pulse 8s infinite alternate}@keyframes pulse{from{transform:scale(1) rotate(0)}to{transform:scale(1.1) rotate(6deg)}}.cockpit{position:relative;z-index:1;border-radius:24px;background:#090916;border:1px solid rgba(255,255,255,.1);padding:18px;min-height:560px;display:grid;grid-template-rows:auto 1fr auto;gap:16px}.topbar{display:flex;justify-content:space-between;gap:12px;align-items:center}.dots{display:flex;gap:7px}.dot{width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}.statusPill{font-size:.78rem;font-weight:900;padding:7px 10px;border-radius:999px;border:1px solid rgba(79,255,176,.28);color:#bfffe3;background:rgba(79,255,176,.08)}.orbStage{display:grid;grid-template-columns:1fr 180px;gap:14px;align-items:center}.orbyss{width:100%;filter:drop-shadow(0 0 32px rgba(0,217,255,.32))}.sidecards{display:grid;gap:10px}.sidecard{padding:12px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09)}.sidecard span{display:block;color:var(--muted);font-size:.8rem}.console{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.console div{padding:12px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}.console b{display:block;color:#fff}.console small{color:var(--muted)}
+    section{padding:64px 0}.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}.sectionHead h2,.bigTitle{font-size:clamp(2rem,4vw,4rem);line-height:1;margin:0;letter-spacing:-.05em}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{position:relative;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));padding:22px;box-shadow:0 14px 48px rgba(0,0,0,.25);overflow:hidden}.card:after{content:"";position:absolute;inset:auto 20px 0 20px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.5}.card h3{font-size:1.35rem;margin:0 0 10px}.icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;background:linear-gradient(135deg,rgba(0,217,255,.22),rgba(155,92,255,.22));border:1px solid rgba(255,255,255,.1);font-weight:950}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:center}.mock{border:1px solid var(--line);border-radius:28px;background:#0a0a18;padding:18px;box-shadow:var(--shadow)}.screen{border-radius:20px;background:linear-gradient(135deg,#111129,#070714);border:1px solid rgba(255,255,255,.09);padding:16px}.screenHeader{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.appGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}.panel{border-radius:18px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);padding:14px}.meter{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:999px}.flow{display:flex;gap:10px;flex-wrap:wrap}.flow span{padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.05);font-weight:900}.road{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{border-radius:22px;border:1px solid var(--line);padding:18px;background:rgba(255,255,255,.05)}.step b{color:var(--cyan)}.wait{border:1px solid rgba(255,255,255,.16);border-radius:34px;padding:32px;background:linear-gradient(135deg,rgba(155,92,255,.2),rgba(0,217,255,.1));box-shadow:var(--shadow)}form{display:grid;gap:12px;margin-top:20px}input,textarea,select{width:100%;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.24);color:#fff;border-radius:16px;padding:14px 15px;font:inherit}textarea{min-height:110px}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.footer{border-top:1px solid var(--line);padding:30px 0 42px;color:var(--muted)}
+    @media(max-width:980px){.heroGrid,.split{grid-template-columns:1fr}.orbStage{grid-template-columns:1fr}.proofbar,.grid4{grid-template-columns:repeat(2,1fr)}.road{grid-template-columns:1fr 1fr}.links{display:none}.cockpit{min-height:auto}}
+    @media(max-width:720px){.wrap{width:calc(100% - 28px)}.navin{height:66px}.hero{padding-top:42px}.hero h1{font-size:3rem}.grid3,.appGrid,.console,.formrow{grid-template-columns:1fr}.proofbar,.grid4,.road{grid-template-columns:1fr}.visual{padding:10px;border-radius:24px}.cockpit{padding:12px}.brand small{display:none}.sectionHead{display:block}.cta{width:100%}.actions .cta{width:auto}}
   </style>
 </head>
 <body>
-<header class="nav">
-  <div class="wrap navin">
-    <a class="brand" href="#top" aria-label="OBSID-Studio accueil"><img src="assets/favicon.svg" alt="OBSID" width="36" height="36" style="border-radius:8px"/> <span>OBSID‑Studio <small>Local AI Creative Studio</small></span></a>
-    <nav class="links" aria-label="Navigation principale">
-      <a href="#produit">Produit</a>
-      <a href="#probleme">Problème</a>
-      <a href="#solution">Solution</a>
-      <a href="#waitlist">Accès privé</a>
-    </nav>
-    <a class="btn" href="#waitlist">Rejoindre la preview</a>
-  </div>
-</header>
-<main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <div style="display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center">
+  <header class="nav">
+    <div class="wrap navin">
+      <a class="brand" href="#top" aria-label="OBSID-Studio accueil"><span class="logo" aria-hidden="true"></span><span>OBSID-Studio<small>Local AI Creative Studio</small></span></a>
+      <nav class="links" aria-label="Navigation principale"><a href="#produit">Produit</a><a href="#orbyss">ORBYSS</a><a href="#modules">Modules</a><a href="#roadmap">Roadmap</a></nav>
+      <a class="cta" href="#waitlist">Accès privé</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap heroGrid">
         <div>
-          <div style="color:var(--cyan);text-transform:uppercase;font-weight:800;letter-spacing:.14em">Founder Preview — Invitation limitée</div>
-          <h1>Arrête de perdre du temps à configurer tes moteurs locaux. Donne-leur un studio.</h1>
-          <p class="lead">OBSID‑Studio transforme ton PC en studio créatif local‑first : découverte des moteurs, orchestration de flux, indexation d'outputs, gestion de projets, mémoire de prompts et un cœur vivant — ORBYSS — qui rend l'état du système lisible et utile.</p>
-          <div class="actions">
-            <a class="btn" href="#waitlist">Demander l'accès privé</a>
-            <a class="btn" href="#demo" style="background:transparent;border:1px solid rgba(255,255,255,.06)">Voir la démo</a>
-          </div>
-          <div class="proof"><span class="badge">Local‑first</span><span class="badge">Outputs traçables</span><span class="badge">ORBYSS living core</span><span class="badge">Preview limitée</span></div>
-        </div>
-        <div class="stage" aria-hidden="true">
-          <img src="assets/obsid-studio-cockpit.svg" alt="Aperçu cockpit OBSID" style="width:100%;height:auto;border-radius:12px"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="produit">
-    <div class="wrap">
-      <h2>Une interface qui rend la puissance locale utilisable</h2>
-      <p class="lead">Un cockpit qui relie moteurs, projets, outputs et mémoire. OBSID n'est pas un moteur : c'est le studio qui organise, trace et réutilise.</p>
-    </div>
-  </section>
-
-  <section id="probleme">
-    <div class="wrap">
-      <h2>Le vrai problème</h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px">
-        <div class="glass"><strong>Trop technique</strong><p>Nodes, modèles, ports, scripts, dépendances — l'ergonomie fait défaut.</p></div>
-        <div class="glass"><strong>Trop fragmenté</strong><p>ComfyUI, LM Studio, Ollama… chaque brique vit dans son coin.</p></div>
-        <div class="glass"><strong>Trop dur à réutiliser</strong><p>Prompts perdus, outputs sans métadonnées, variations introuvables.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="solution">
-    <div class="wrap">
-      <h2>La solution</h2>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px">
-        <div class="glass"><strong>01</strong><p>Détecter moteurs et états</p></div>
-        <div class="glass"><strong>02</strong><p>Créer: image, vidéo, son, texte</p></div>
-        <div class="glass"><strong>03</strong><p>Ranger: thumbnails, metadata</p></div>
-        <div class="glass"><strong>04</strong><p>Réutiliser: prompts, presets</p></div>
-        <div class="glass"><strong>05</strong><p>Exporter: packs & livrables</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="waitlist">
-    <div class="wrap">
-      <h2>Rejoindre l'accès privé</h2>
-      <p class="lead">Places limitées. Pas de spam — seulement annonces importantes (démo, Founder Preview, lancement).</p>
-      <form id="waitlist-form" class="form" aria-label="Formulaire d'inscription à la liste d'attente">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div>
-            <label for="name">Nom</label>
-            <input id="name" name="name" type="text" required placeholder="Ton nom">
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="toi@email.com">
+          <div class="mini">Founder preview · studio IA local-first</div>
+          <h1>Transforme tes moteurs IA locaux en studio créatif.</h1>
+          <p class="lead"><strong>OBSID-Studio</strong> est un cockpit premium pour piloter ComfyUI, Forge, LM Studio, Ollama, TTS/STT et tes workflows créatifs sans te perdre dans les ports, scripts, dossiers et outputs dispersés.</p>
+          <div class="actions"><a class="cta" href="#waitlist">Rejoindre la preview</a><a class="cta ghost" href="#produit">Voir la vision produit</a></div>
+          <div class="chips"><span class="chip">Image</span><span class="chip">Vidéo</span><span class="chip">Musique</span><span class="chip">Voix</span><span class="chip">Texte</span><span class="chip">Agents</span><span class="chip">Outputs traçables</span></div>
+          <div class="proofbar" aria-label="Promesse produit">
+            <div class="proof"><b>Local-first</b><span class="muted">tes moteurs, ta machine</span></div>
+            <div class="proof"><b>ORBYSS</b><span class="muted">cœur vivant du studio</span></div>
+            <div class="proof"><b>Workflows</b><span class="muted">presets réutilisables</span></div>
+            <div class="proof"><b>Engine Health</b><span class="muted">statuts honnêtes</span></div>
           </div>
         </div>
-        <div style="margin-top:12px">
-          <label for="profile">Profil</label>
-          <select id="profile" name="profile">
-            <option>Créateur</option><option>Freelance</option><option>Agence</option><option>Musicien</option><option>Maker IA</option><option>Entreprise</option><option>Autre</option>
-          </select>
+
+        <div class="visual" aria-label="Preview OBSID-Studio">
+          <div class="cockpit">
+            <div class="topbar"><div><strong>OBSID Command Deck</strong><div class="muted">runtime · creative reactor · projects</div></div><div class="statusPill">LOCAL STACK ONLINE</div></div>
+            <div class="orbStage">
+              <svg class="orbyss" viewBox="0 0 620 620" role="img" aria-label="ORBYSS visual premium">
+                <defs>
+                  <radialGradient id="core" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#ffffff"/><stop offset=".25" stop-color="#00d9ff"/><stop offset=".55" stop-color="#9b5cff"/><stop offset="1" stop-color="#060612" stop-opacity="0"/></radialGradient>
+                  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00d9ff"/><stop offset=".55" stop-color="#9b5cff"/><stop offset="1" stop-color="#ff4fd8"/></linearGradient>
+                  <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <g opacity=".55" stroke="url(#edge)" stroke-width="2" fill="none">
+                  <path d="M310 60 C210 120 130 120 70 210 C170 205 170 310 78 420 C180 385 220 490 310 560 C370 460 480 505 550 390 C450 370 480 230 545 155 C420 175 415 85 310 60Z"/>
+                  <path d="M105 235 L235 185 L350 95 L430 230 L540 330 L390 390 L320 535 L240 378Z"/>
+                  <path d="M170 430 L250 255 L310 140 L390 305 L500 210"/>
+                </g>
+                <g filter="url(#glow)">
+                  <path d="M310 92 L398 215 L522 181 L453 307 L548 424 L405 410 L335 552 L285 404 L128 452 L225 319 L91 231 L252 226Z" fill="rgba(155,92,255,.18)" stroke="url(#edge)" stroke-width="3"/>
+                  <path d="M310 155 L382 260 L335 385 L210 360 L190 245Z" fill="rgba(0,217,255,.12)" stroke="rgba(255,255,255,.45)"/>
+                  <circle cx="310" cy="310" r="98" fill="url(#core)" opacity=".82"/>
+                  <circle cx="310" cy="310" r="24" fill="#fff"/>
+                </g>
+                <g stroke="url(#edge)" stroke-width="3" opacity=".75"><path d="M310 310 C160 250 120 150 66 80"/><path d="M310 310 C470 270 520 180 586 120"/><path d="M310 310 C460 410 520 480 580 565"/><path d="M310 310 C210 435 135 505 50 548"/></g>
+              </svg>
+              <div class="sidecards">
+                <div class="sidecard"><strong>ORBYSS</strong><span>living state · thinking</span></div>
+                <div class="sidecard"><strong>ComfyUI</strong><span>ready · image pipeline</span></div>
+                <div class="sidecard"><strong>LM Studio</strong><span>local reasoning</span></div>
+                <div class="sidecard"><strong>Outputs</strong><span>226 assets indexed</span></div>
+              </div>
+            </div>
+            <div class="console"><div><b>Generate</b><small>image/video/music/voice</small></div><div><b>Repair</b><small>diagnose local stack</small></div><div><b>Reuse</b><small>projects/presets/history</small></div></div>
+          </div>
         </div>
-        <div style="margin-top:12px">
-          <label for="goal">Ce que tu veux produire</label>
-          <textarea id="goal" name="goal" placeholder="Visuels, packs clients, vidéo, musique, workflows..."></textarea>
+      </div>
+    </section>
+
+    <section id="produit">
+      <div class="wrap">
+        <div class="sectionHead"><div><div class="mini">Le problème</div><h2>La puissance locale existe déjà. Elle est juste éclatée.</h2></div><p class="lead">OBSID-Studio n’est pas un moteur de plus. C’est la couche produit qui rend les moteurs IA locaux utilisables, lisibles, organisés et vendables.</p></div>
+        <div class="grid3">
+          <article class="card"><div class="icon">01</div><h3>Moteurs dispersés</h3><p class="muted">ComfyUI, Forge, LM Studio, Ollama, TTS, vidéo, musique : chaque outil a ses ports, dossiers, erreurs et habitudes.</p></article>
+          <article class="card"><div class="icon">02</div><h3>Outputs perdus</h3><p class="muted">Images, prompts, previews, versions et fichiers finissent dispersés. OBSID veut les relier à un projet et une preuve.</p></article>
+          <article class="card"><div class="icon">03</div><h3>Workflow fragile</h3><p class="muted">Un bon résultat ne sert à rien si tu ne peux pas le répéter. OBSID transforme les réglages en presets et chaînes réutilisables.</p></article>
         </div>
-        <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
-          <input id="founder" type="checkbox" name="founderInterest" value="yes"><label for="founder">Je veux être prévenu pour la Founder Preview.</label>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="wrap split">
+        <div>
+          <div class="mini">La solution</div>
+          <h2 class="bigTitle">Un cockpit créatif pour produire, réparer, organiser et réutiliser.</h2>
+          <p class="lead">OBSID-Studio centralise la création image, vidéo, musique, voix et texte dans une expérience locale-first : Engine Health honnête, projets, galerie d’outputs, presets, workflows, agents et mémoire créative.</p>
+          <div class="flow"><span>OBSERVE</span><span>ANALYZE</span><span>PREDICT</span><span>ADAPT</span><span>ACT</span><span>LEARN</span></div>
         </div>
-        <p style="margin-top:12px;color:var(--muted);font-size:.92rem">Formulaire local : si vous n'utilisez pas un backend, ce formulaire ouvre votre messagerie pour envoyer les infos. Les données ne sont pas stockées sur ce site.</p>
-        <button type="submit" class="btn" style="margin-top:14px">Demander l'accès privé</button>
-      </form>
-    </div>
-  </section>
+        <div class="mock">
+          <div class="screen">
+            <div class="screenHeader"><strong>Creative Reactor</strong><span class="statusPill">truthful runtime</span></div>
+            <div class="appGrid">
+              <div class="panel"><strong>Project: Neon launch pack</strong><p class="muted">Prompt vault, workflow image, voice preset, music loop, export kit.</p><div class="meter"><i style="width:82%"></i></div></div>
+              <div class="panel"><strong>Engine Health</strong><p class="muted">ComfyUI ready · Forge startable · Kokoro ready · LM Studio ready</p><div class="meter"><i style="width:68%"></i></div></div>
+              <div class="panel"><strong>Generator Store</strong><p class="muted">Landing kit · Social pack · Moodboard · Voice intro · Product sheet</p></div>
+              <div class="panel"><strong>Outputs Memory</strong><p class="muted">Assets classés par projet, modèle, prompt, date, workflow et preuve.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section id="faq">
-    <div class="wrap">
-      <h2>FAQ</h2>
-      <details><summary>OBSID-Studio est-il juste un générateur IA ?</summary><p>Non. La génération est une couche. OBSID vise l'organisation, la réutilisation, les projets et la traçabilité des outputs.</p></details>
-      <details><summary>Est-ce un cloud ?</summary><p>Non. Local-first. Des intégrations externes pourront exister plus tard, mais le coeur vise le contrôle local.</p></details>
-    </div>
-  </section>
-</main>
+    <section id="orbyss">
+      <div class="wrap">
+        <div class="sectionHead"><div><div class="mini">Cœur vivant</div><h2>ORBYSS rend le studio lisible.</h2></div><p class="lead">Pas une boule décorative. ORBYSS doit devenir une présence visuelle premium : cristalline, biomécanique, réactive, capable de refléter l’état réel du studio.</p></div>
+        <div class="grid4">
+          <article class="card"><div class="icon">◆</div><h3>Idle</h3><p class="muted">Le studio surveille les moteurs, les dossiers et les projets sans bruit inutile.</p></article>
+          <article class="card"><div class="icon">✦</div><h3>Thinking</h3><p class="muted">Un agent analyse une tâche, propose un workflow ou prépare un plan de génération.</p></article>
+          <article class="card"><div class="icon">●</div><h3>Generating</h3><p class="muted">Les flux visuels, voix, musique ou vidéo deviennent visibles et traçables.</p></article>
+          <article class="card"><div class="icon">!</div><h3>Repair</h3><p class="muted">Un moteur tombe : OBSID explique le blocage exact au lieu d’afficher un faux READY.</p></article>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div><strong>OBSID‑Studio</strong><div style="color:var(--muted);font-size:.92rem">Prototype — Founder Preview</div></div>
-      <div style="color:var(--muted)"><a href="https://github.com/FlorianHFK/obsid-studio-site">Repository</a> · <a href="https://florianhfk.github.io/obsid-studio-site/">Live</a></div>
-    </div>
-  </div>
-</footer>
+    <section id="modules">
+      <div class="wrap">
+        <div class="sectionHead"><div><div class="mini">Modules prévus</div><h2>Pas juste image. Un studio complet.</h2></div><p class="lead">La landing existe pour présenter la vision produit avant la version applicative complète.</p></div>
+        <div class="grid3">
+          <article class="card"><h3>Creative Engines</h3><p class="muted">Image, vidéo, musique, voix, texte. Connexion aux moteurs locaux et profils de génération.</p></article>
+          <article class="card"><h3>Workflow Vault</h3><p class="muted">Presets, templates, prompts, styles, chaînes ComfyUI, exports, versions.</p></article>
+          <article class="card"><h3>Outputs Gallery</h3><p class="muted">Galerie organisée avec métadonnées, preuves, favoris, recherche et réutilisation.</p></article>
+          <article class="card"><h3>Engine Health</h3><p class="muted">Diagnostic clair : absent, installé, lancé, bloqué, prêt, preuve disponible.</p></article>
+          <article class="card"><h3>LLM Agent & MCP</h3><p class="muted">Agents locaux pour analyser, planifier, organiser, corriger et agir dans un cadre contrôlé.</p></article>
+          <article class="card"><h3>Generator Store</h3><p class="muted">Générateurs de landing, kit marque, pitch, fiche produit, pack social, moodboard et assets.</p></article>
+        </div>
+      </div>
+    </section>
 
-<noscript><div style="position:fixed;left:0;right:0;top:0;background:#ffefc2;color:#000;padding:12px;text-align:center">JavaScript est désactivé — pour finaliser l'inscription la messagerie s'ouvrira automatiquement pour envoyer vos informations.</div></noscript>
+    <section id="roadmap">
+      <div class="wrap">
+        <div class="sectionHead"><div><div class="mini">Roadmap</div><h2>De la vitrine au studio portable.</h2></div></div>
+        <div class="road">
+          <div class="step"><b>01</b><h3>Landing</h3><p class="muted">Vision, identité, promesse commerciale.</p></div>
+          <div class="step"><b>02</b><h3>Prototype</h3><p class="muted">Cockpit, ORBYSS, galerie, statuts moteurs.</p></div>
+          <div class="step"><b>03</b><h3>Runtime</h3><p class="muted">ComfyUI, Forge, LM Studio, Ollama, TTS/STT.</p></div>
+          <div class="step"><b>04</b><h3>Productisation</h3><p class="muted">Presets, workflows, packs, exports, install guidée.</p></div>
+          <div class="step"><b>05</b><h3>Founder Preview</h3><p class="muted">Tests réels, retours, bêta privée.</p></div>
+        </div>
+      </div>
+    </section>
 
-<script>
-// Waitlist submission: open mail client with prefilled content and redirect to success page
-document.getElementById('waitlist-form').addEventListener('submit', function(e){
-  e.preventDefault();
-  const name = encodeURIComponent(document.getElementById('name').value.trim());
-  const email = encodeURIComponent(document.getElementById('email').value.trim());
-  const profile = encodeURIComponent(document.getElementById('profile').value);
-  const goal = encodeURIComponent(document.getElementById('goal').value.trim());
-  const founder = document.getElementById('founder').checked ? 'Oui' : 'Non';
+    <section id="waitlist">
+      <div class="wrap wait">
+        <div class="mini">Accès privé</div>
+        <h2 class="bigTitle">Rejoindre la preview OBSID-Studio.</h2>
+        <p class="lead">Tu veux tester un studio IA local-first qui organise vraiment les moteurs, projets, outputs et workflows ? Laisse un contact. Le formulaire reste statique : aucun backend obligatoire, aucun Netlify imposé.</p>
+        <form id="waitlistForm">
+          <div class="formrow"><input id="name" name="name" placeholder="Nom / projet" required><input id="email" name="email" type="email" placeholder="email@example.com" required></div>
+          <select id="profile" name="profile"><option>Créateur / artiste IA</option><option>Freelance / studio</option><option>Agence / production</option><option>Musicien / vidéaste</option><option>Maker IA local</option><option>Autre</option></select>
+          <textarea id="message" name="message" placeholder="Ce que tu voudrais produire avec OBSID-Studio : images, vidéos, musique, voix, packs clients, workflows..."></textarea>
+          <button class="cta" type="submit">Demander l’accès privé</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
-  if(!name || !email){ alert('Veuillez renseigner votre nom et email.'); return; }
-
-  const subject = `OBSID Waitlist — ${name}`;
-  const body = `Nom: ${name}%0AEmail: ${email}%0AProfil: ${profile}%0AFounder Preview: ${founder}%0A%0AObjectif:%0A${goal}`;
-  // replace the contact email with your preferred inbox
-  const contact = 'founders@obsid-studio.example';
-  const mailto = `mailto:${contact}?subject=${encodeURIComponent(subject)}&body=${body}`;
-  // Try opening mail client then redirect to thank you
-  window.location.href = mailto;
-  // After attempting to open mail client, still redirect to success page
-  setTimeout(()=>{ window.location.href = 'waitlist-success.html'; }, 1200);
-});
-
-// Small intersection observer for reveal elements (progressive)
-const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=> { if(e.isIntersecting) e.target.classList.add('show'); }); },{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
+  <footer class="footer"><div class="wrap">OBSID-Studio — Local AI Creative Studio · Landing preview · Projet par Florian HFK · Contact : <a href="mailto:hachefk23@gmail.com">hachefk23@gmail.com</a></div></footer>
+  <script>
+    document.getElementById('waitlistForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const profile=document.getElementById('profile').value;
+      const message=document.getElementById('message').value.trim();
+      const subject=encodeURIComponent('OBSID-Studio preview — demande accès privé');
+      const body=encodeURIComponent(`Nom/projet: ${name}\nEmail: ${email}\nProfil: ${profile}\n\nObjectif:\n${message}`);
+      window.location.href=`mailto:hachefk23@gmail.com?subject=${subject}&body=${body}`;
+      setTimeout(()=>{ window.location.href='waitlist-success.html'; }, 700);
+    });
+  </script>
 </body>
 </html>
