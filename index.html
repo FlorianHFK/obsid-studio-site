@@ -4,376 +4,216 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OBSID-Studio — Local AI Creative Studio</title>
-  <meta name="description" content="OBSID-Studio transforme l’IA locale chaotique en studio créatif local-first : moteurs IA, projets, outputs, workflows, mémoire et ORBYSS.">
+  <meta name="description" content="OBSID-Studio transforme l'IA locale chaotique en studio créatif local-first : moteurs IA, projets, outputs, workflows, mémoire, ORBYSS et contrôle local.">
   <meta property="og:title" content="OBSID-Studio — Local AI Creative Studio">
-  <meta property="og:description" content="Arrête de te perdre dans tes moteurs IA locaux. Crée, organise, réutilise et exporte avec un studio IA local-first.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#070918">
+  <meta property="og:description" content="Arrête de te perdre dans tes moteurs IA locaux. OBSID-Studio transforme ton PC en studio créatif local-first.">
+  <meta name="theme-color" content="#03040b">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    :root{
+      --bg:#03040b;--bg2:#070819;--panel:rgba(10,14,34,.78);--panel2:rgba(15,20,48,.92);
+      --line:rgba(143,129,255,.24);--txt:#f4f8ff;--muted:#a7b4cd;--dim:#6f7b94;
+      --cyan:#06d6ff;--violet:#a855f7;--mag:#f046ff;--amber:#f59e0b;--green:#22c55e;
+      --max:1520px;--r:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--txt); font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 70% 10%,rgba(168,85,247,.28),transparent 34rem),
+        radial-gradient(circle at 20% 0%,rgba(6,214,255,.18),transparent 32rem),
+        radial-gradient(circle at 60% 62%,rgba(245,158,11,.09),transparent 26rem),
+        linear-gradient(180deg,#02030a 0%,#060719 42%,#03040b 100%);
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;opacity:.33;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size:74px 74px;mask-image:linear-gradient(#000,transparent 82%);
+    }
+    body:after{
+      content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.7;
+      background:radial-gradient(ellipse at 50% 48%,transparent 0 36%,rgba(80,30,130,.16) 58%,transparent 74%);
+    }
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+    .nav{position:sticky;top:0;z-index:30;background:rgba(3,4,11,.78);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .navin{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:-.03em}
+    .mark{width:40px;height:40px;border-radius:14px;background:radial-gradient(circle,#fff 0 8%,var(--cyan) 10% 28%,var(--violet) 34% 56%,#020617 60%);box-shadow:0 0 30px rgba(168,85,247,.55)}
+    .brand small{display:block;color:var(--dim);font-size:.68rem;text-transform:uppercase;letter-spacing:.16em;font-weight:900}
+    .links{display:flex;gap:22px;color:#cbd7ef;font-size:.92rem;font-weight:850}
+    .links a:hover{color:white}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);padding:14px 20px;color:white;font-weight:950;transition:.2s;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+    .btn:hover{transform:translateY(-2px);border-color:rgba(6,214,255,.5);background:rgba(255,255,255,.1)}
+    .primary{border:0;background:linear-gradient(135deg,#7c3aed 0%,#06b6d4 55%,#f59e0b 115%);box-shadow:0 18px 58px rgba(6,214,255,.18),0 12px 48px rgba(124,58,237,.28)}
+    .hero{min-height:calc(100vh - 78px);display:grid;align-items:center;padding:60px 0 56px}
+    .hero-grid{display:grid;grid-template-columns:minmax(520px,.96fr) minmax(540px,1.04fr);gap:46px;align-items:center}
+    .eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:950;margin-bottom:14px}
+    h1,h2,h3{margin:0;line-height:1.02} h1{font-size:clamp(4.2rem,7vw,9.8rem);letter-spacing:-.09em} h2{font-size:clamp(2.8rem,4.6vw,6.2rem);letter-spacing:-.075em} h3{font-size:1.18rem}
+    .grad{background:linear-gradient(90deg,#fff,#bff7ff 32%,#c084fc 68%,#ffd073);-webkit-background-clip:text;background-clip:text;color:transparent}
+    p{color:var(--muted);margin:0;line-height:1.62}.lead{font-size:clamp(1.08rem,1.45vw,1.45rem);color:#e0ebff;max-width:830px}.strongline{margin-top:16px;color:white;font-weight:950;font-size:clamp(1.1rem,1.35vw,1.5rem)}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin:32px 0 18px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);background:rgba(10,13,30,.72);border-radius:999px;padding:9px 13px;color:#dfeaff;font-size:.84rem;font-weight:900}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green)}
+    .commercial-line{margin-top:26px;padding:18px 20px;border-left:3px solid var(--cyan);background:linear-gradient(90deg,rgba(6,214,255,.12),rgba(168,85,247,.06),transparent);border-radius:18px;color:#fff;font-weight:900}
+    .stage{position:relative;min-height:680px;border-radius:40px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:radial-gradient(circle at 50% 44%,rgba(168,85,247,.24),transparent 18%),radial-gradient(circle at 50% 52%,rgba(6,214,255,.17),transparent 35%),linear-gradient(180deg,rgba(11,15,36,.92),rgba(1,2,8,.94));box-shadow:0 44px 160px rgba(0,0,0,.62),inset 0 1px 0 rgba(255,255,255,.06);display:grid;place-items:center}
+    .stage:before{content:"";position:absolute;inset:-1px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 54px),repeating-linear-gradient(0deg,rgba(6,214,255,.025) 0 1px,transparent 1px 54px);opacity:.55}
+    .stage:after{content:"";position:absolute;inset:10%;border:1px solid rgba(6,214,255,.15);border-radius:50%;box-shadow:0 0 80px rgba(6,214,255,.13),inset 0 0 80px rgba(168,85,247,.12);animation:pulse 5s ease-in-out infinite}
+    .entity{width:min(660px,88vw);height:min(660px,88vw);position:relative;filter:drop-shadow(0 0 62px rgba(168,85,247,.64));animation:float 7s ease-in-out infinite;z-index:2}
+    .shard{position:absolute;left:50%;top:50%;transform-origin:0 0;clip-path:polygon(8% 13%,78% 0,100% 46%,57% 100%,0 76%);background:radial-gradient(circle at 40% 35%,rgba(255,255,255,.82),transparent 8%),linear-gradient(135deg,rgba(6,214,255,.78),rgba(168,85,247,.84) 58%,rgba(245,158,11,.28));border:1px solid rgba(255,255,255,.15);mix-blend-mode:screen}
+    .s1{width:290px;height:150px;transform:translate(-10%,-92%) rotate(-18deg) skew(-13deg);animation:m1 6.4s infinite ease-in-out}.s2{width:340px;height:180px;transform:translate(-76%,-48%) rotate(23deg) skew(7deg);opacity:.82;animation:m2 7.2s infinite ease-in-out}.s3{width:360px;height:165px;transform:translate(-34%,20%) rotate(-38deg) skew(10deg);animation:m3 8s infinite ease-in-out}.s4{width:235px;height:330px;transform:translate(4%,-34%) rotate(43deg) skew(-11deg);opacity:.76;animation:m4 7.6s infinite ease-in-out}.s5{width:170px;height:370px;transform:translate(-90%,-8%) rotate(-74deg) skew(-4deg);opacity:.58;animation:m5 6.8s infinite ease-in-out}.s6{width:420px;height:80px;transform:translate(-45%,-12%) rotate(8deg) skew(-20deg);opacity:.38}
+    .core{position:absolute;inset:36%;border-radius:45% 55% 42% 58%;background:radial-gradient(circle,#fff 0 9%,#f0abfc 10% 22%,#7c3aed 38%,#06d6ff 72%,transparent 73%);box-shadow:0 0 100px #a855f7,0 0 170px rgba(6,214,255,.45);animation:core 3.5s ease-in-out infinite;z-index:4}
+    .tendril{position:absolute;left:50%;top:50%;height:2px;width:350px;background:linear-gradient(90deg,rgba(255,255,255,.72),rgba(6,214,255,.42),transparent);transform-origin:0 0;opacity:.58}.t1{transform:rotate(18deg)}.t2{transform:rotate(68deg);width:420px}.t3{transform:rotate(132deg);width:320px}.t4{transform:rotate(195deg);width:430px}.t5{transform:rotate(248deg);width:360px}.t6{transform:rotate(312deg);width:455px}
+    .state{position:absolute;z-index:5;border:1px solid rgba(255,255,255,.14);background:rgba(2,6,23,.76);border-radius:999px;padding:9px 12px;font-size:.72rem;font-weight:950;letter-spacing:.12em;color:#dff8ff}.state b{color:var(--cyan)}.st1{top:28px;left:28px}.st2{top:82px;right:34px}.st3{bottom:84px;left:38px}.st4{bottom:34px;right:48px}
+    .proof-strip{margin-top:24px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.proof{padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(8,12,29,.74);font-weight:950;text-align:center;color:#fff}.proof span{display:block;color:var(--cyan);font-size:.74rem;text-transform:uppercase;letter-spacing:.13em;margin-bottom:4px}
+    section{padding:72px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:34px;margin-bottom:30px}.head p{max-width:720px}
+    .glass{border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,rgba(17,22,50,.82),rgba(7,10,24,.78));box-shadow:0 24px 90px rgba(0,0,0,.46),inset 0 1px 0 rgba(255,255,255,.06)}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{padding:26px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 0 0,rgba(6,214,255,.1),transparent 38%),radial-gradient(circle at 100% 0,rgba(168,85,247,.12),transparent 32%);opacity:.8}.card>*{position:relative}.icon{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;margin-bottom:16px;background:linear-gradient(135deg,rgba(168,85,247,.85),rgba(6,214,255,.55))}
+    .compare{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}.compare .glass{padding:20px}.compare strong{display:block;color:#fff;margin-bottom:6px}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.flowstep{min-height:172px;padding:20px;border-radius:24px;border:1px solid rgba(255,255,255,.11);background:linear-gradient(180deg,rgba(18,22,45,.84),rgba(5,7,18,.82))}.num{color:var(--cyan);font-size:.78rem;font-weight:950;letter-spacing:.16em}
+    .target{display:grid;grid-template-columns:1.02fr .98fr;gap:24px;align-items:center}.shot{overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.12);background:#050711}.shot img{width:100%;height:100%;object-fit:cover}.caption{padding:16px 18px;color:#cfe0ff;font-weight:850}
+    .demo{display:grid;grid-template-columns:.78fr 1.22fr;gap:20px}.steps{display:grid;gap:10px}.step{display:flex;gap:13px;padding:15px;border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(9,12,28,.72)}.step b{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:10px;background:rgba(6,214,255,.12);color:var(--cyan)}
+    .mock{padding:18px;display:grid;gap:14px;min-height:455px}.mocktop{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:12px}.mockbody{display:grid;grid-template-columns:.78fr 1.35fr .75fr;gap:12px}.panel{border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(0,0,0,.24);padding:15px}.prompt{min-height:135px;border-radius:18px;padding:18px;background:rgba(255,255,255,.05);border:1px solid rgba(6,214,255,.22);color:#dff8ff;display:flex;align-items:flex-end}.preview{min-height:200px;border-radius:22px;overflow:hidden;position:relative;background:radial-gradient(circle at 45% 42%,rgba(168,85,247,.95),transparent 16%),radial-gradient(circle at 55% 50%,rgba(6,214,255,.65),transparent 28%),linear-gradient(135deg,#070918,#111827);border:1px solid rgba(255,255,255,.12)}.queue{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.queue div{height:48px;border-radius:13px;background:linear-gradient(135deg,rgba(6,214,255,.16),rgba(168,85,247,.16));border:1px solid rgba(255,255,255,.08)}
+    .orbyss-section{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}.states{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}.tile{padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(8,12,29,.72);font-size:.84rem;font-weight:950;letter-spacing:.08em}
+    .reactor{min-height:380px;display:grid;place-items:center;position:relative;overflow:hidden}.reactor:before{content:"";width:300px;height:300px;border-radius:50%;border:1px solid rgba(6,214,255,.22);box-shadow:0 0 80px rgba(6,214,255,.13),inset 0 0 70px rgba(168,85,247,.14);animation:spin 22s linear infinite}.reactor:after{content:"OBSERVE → ANALYZE → PREDICT → ADAPT → ACT → LEARN";position:absolute;width:72%;text-align:center;color:#fff;font-weight:950;letter-spacing:.1em;line-height:1.7}
+    .road{display:grid;gap:12px}.roaditem{display:grid;grid-template-columns:90px 1fr auto;gap:18px;align-items:center;padding:18px 20px;border-radius:20px;border:1px solid rgba(255,255,255,.09);background:rgba(9,12,28,.72)}.tag{font-size:.76rem;font-weight:950;color:#111827;background:#bdf7ff;border-radius:999px;padding:7px 11px}
+    .formwrap{display:grid;grid-template-columns:.86fr 1.14fr;gap:24px}.form{padding:26px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.full{grid-column:1/-1}label{display:block;font-weight:850;color:#dbeafe;font-size:.88rem;margin-bottom:7px}input,select,textarea{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(3,4,11,.6);color:#fff;padding:14px 15px;outline:none}textarea{min-height:118px}.check{display:flex;align-items:flex-start;gap:10px;color:var(--muted);font-size:.92rem}.check input{width:auto;margin-top:4px}
+    details{padding:19px 21px;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:rgba(9,12,28,.72);margin-bottom:12px}summary{cursor:pointer;font-weight:950;color:#fff}details p{margin-top:10px}
+    footer{padding:44px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--dim)}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .72s ease,transform .72s ease}.reveal.show{opacity:1;transform:none}
+    @keyframes pulse{0%,100%{transform:scale(.96);opacity:.55}50%{transform:scale(1.05);opacity:.84}}@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-18px) rotate(1.5deg)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes core{50%{transform:scale(1.12) rotate(18deg);border-radius:60% 40% 58% 42%}}@keyframes m1{50%{transform:translate(2%,-98%) rotate(-26deg) skew(-4deg) scale(1.06)}}@keyframes m2{50%{transform:translate(-82%,-52%) rotate(18deg) skew(17deg)}}@keyframes m3{50%{transform:translate(-42%,28%) rotate(-28deg) skew(3deg)}}@keyframes m4{50%{transform:translate(10%,-26%) rotate(52deg) skew(-5deg)}}@keyframes m5{50%{transform:translate(-94%,-15%) rotate(-65deg) skew(-15deg)}}
+    @media(max-width:1100px){.hero-grid,.target,.demo,.orbyss-section,.formwrap{grid-template-columns:1fr}.stage{min-height:560px}.grid4{grid-template-columns:repeat(2,1fr)}.flow,.proof-strip{grid-template-columns:1fr 1fr}.mockbody{grid-template-columns:1fr}.links{display:none}}
+    @media(max-width:720px){.wrap{width:min(100% - 28px, var(--max))}section{padding:56px 0}.hero{padding:46px 0 56px}.grid3,.grid4,.compare,.flow,.proof-strip,.formgrid{grid-template-columns:1fr}.head{display:block}.stage{min-height:440px}.entity{width:350px;height:350px}.roaditem{grid-template-columns:1fr}h1{font-size:clamp(3.6rem,17vw,5.4rem)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#top" class="brand" aria-label="OBSID-Studio accueil">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>OBSID-Studio <small>Local AI Creative Studio</small></span>
-      </a>
-      <nav class="nav-links" aria-label="Navigation principale">
-        <a href="#probleme">Problème</a>
-        <a href="#solution">Solution</a>
-        <a href="#demo">Démo</a>
-        <a href="#orbyss">ORBYSS</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#waitlist">Accès privé</a>
-      </nav>
-      <a class="btn primary" href="#waitlist">Rejoindre</a>
+<header class="nav">
+  <div class="wrap navin">
+    <a class="brand" href="#top"><span class="mark"></span><span>OBSID-Studio<small>Local AI Creative Studio</small></span></a>
+    <nav class="links">
+      <a href="#probleme">Problème</a><a href="#solution">Solution</a><a href="#demo">Démo</a><a href="#orbyss">ORBYSS</a><a href="#roadmap">Roadmap</a><a href="#waitlist">Accès privé</a>
+    </nav>
+    <a class="btn primary" href="#waitlist">Rejoindre</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">Founder Preview en préparation</div>
+      <h1>Arrête de te perdre<br>dans tes moteurs<br><span class="grad">IA locaux.</span></h1>
+      <p class="lead">OBSID-Studio transforme ton PC en studio créatif local-first : moteurs IA, assistants locaux, projets, outputs, workflows, mémoire et états système réunis dans une interface claire.</p>
+      <p class="strongline">Créer. Organiser. Réutiliser. Exporter. Garder le contrôle.</p>
+      <div class="actions"><a class="btn primary" href="#waitlist">Rejoindre l'accès privé</a><a class="btn" href="#solution">Voir la vision</a></div>
+      <div class="badges"><span class="badge"><span class="dot"></span>Local-first</span><span class="badge">Outputs traçables</span><span class="badge">ORBYSS living core</span><span class="badge">Founder Preview</span></div>
+      <div class="commercial-line">OBSID-Studio ne vend pas un moteur IA. Il vend l'ordre, la mémoire et le contrôle autour de tes moteurs locaux.<br>Moins de scripts. Moins de chaos. Plus de livrables.</div>
     </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="eyebrow">Founder Preview en préparation</div>
-          <h1>Arrête de te perdre dans tes <span class="gradient-text">moteurs IA locaux.</span></h1>
-          <p class="lead">
-            OBSID-Studio transforme ton PC en studio créatif local-first : moteurs IA, assistants locaux,
-            projets, outputs, workflows, mémoire et états système réunis dans une interface claire.
-          </p>
-          <p class="lead" style="margin-top:14px;color:#fff;font-weight:900">Créer. Organiser. Réutiliser. Exporter. Garder le contrôle.</p>
-          <div class="hero-actions">
-            <a href="#waitlist" class="btn primary">Rejoindre l’accès privé</a>
-            <a href="#solution" class="btn ghost">Voir la vision</a>
-          </div>
-          <div class="badges" aria-label="Points clés">
-            <span class="badge"><span class="dot"></span>Local-first</span>
-            <span class="badge">Outputs traçables</span>
-            <span class="badge">ORBYSS living core</span>
-            <span class="badge">Pas un cloud déguisé</span>
-          </div>
-          <div class="hero-proof">
-            <div class="proof-tile"><strong>Pas NEXUS brut</strong><span>Produit focalisé</span></div>
-            <div class="proof-tile"><strong>Création + ordre</strong><span>Pas juste générer</span></div>
-            <div class="proof-tile"><strong>Preview limitée</strong><span>Roadmap honnête</span></div>
-          </div>
-        </div>
-
-        <div class="orbyss-stage reveal" aria-label="Visualisation abstraite ORBYSS">
-          <span class="state-chip"><b>READY</b> / Local</span>
-          <span class="state-chip"><b>THINKING</b> / Neural</span>
-          <span class="state-chip"><b>GENERATING</b> / Output</span>
-          <span class="state-chip"><b>RECOVERY</b> / Guided</span>
-          <div class="orbyss-entity" aria-hidden="true">
-            <span class="tendril t1"></span><span class="tendril t2"></span><span class="tendril t3"></span>
-            <span class="tendril t4"></span><span class="tendril t5"></span><span class="tendril t6"></span>
-            <span class="shard s1"></span><span class="shard s2"></span><span class="shard s3"></span><span class="shard s4"></span><span class="shard s5"></span>
-            <span class="core"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="probleme" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Le vrai problème</div>
-            <h2>L’IA locale est puissante. <span class="gradient-text">Mais aujourd’hui, c’est le chaos.</span></h2>
-          </div>
-          <p>Les moteurs locaux donnent du contrôle, mais la plupart des créateurs se perdent dans les outils, les dossiers, les modèles, les ports et les workflows.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card glass reveal">
-            <div class="icon">⚙</div>
-            <h3>Trop technique</h3>
-            <p>Nodes, modèles, ports, scripts, dépendances, versions, chemins dispersés. La puissance existe, l’expérience manque.</p>
-          </article>
-          <article class="card glass reveal">
-            <div class="icon">⟐</div>
-            <h3>Trop fragmenté</h3>
-            <p>ComfyUI, LM Studio, Ollama, Forge, TTS, musique, vidéo, outputs : chaque brique vit dans son coin.</p>
-          </article>
-          <article class="card glass reveal">
-            <div class="icon">⌕</div>
-            <h3>Trop dur à réutiliser</h3>
-            <p>Prompts perdus, fichiers sans métadonnées, variations impossibles à retrouver. Le chaos tue la création.</p>
-          </article>
-        </div>
-        <div class="compare reveal">
-          <div class="glass"><strong>Cloud IA</strong><span>Simple, mais abonnements, quotas, dépendance et contrôle limité.</span></div>
-          <div class="glass"><strong>IA locale brute</strong><span>Puissante, mais confuse, fragile et souvent décourageante.</span></div>
-          <div class="glass"><strong>OBSID-Studio</strong><span>Local-first, organisé, visible, réutilisable et orienté livrables.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="solution" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">La solution</div>
-            <h2>OBSID-Studio remet ton <span class="gradient-text">PC créatif en ordre.</span></h2>
-          </div>
-          <p>OBSID ne remplace pas tes moteurs. Il les rend utilisables : il connecte, guide, organise et prépare les outputs pour que tu produises au lieu de configurer pendant trois jours.</p>
-        </div>
-        <div class="flow">
-          <div class="flow-step reveal"><span class="num">01</span><h3>Détecter</h3><p>Moteurs, états, ressources, disponibilité, blocages.</p></div>
-          <div class="flow-step reveal"><span class="num">02</span><h3>Créer</h3><p>Image, vidéo, musique, voix, texte, workflows.</p></div>
-          <div class="flow-step reveal"><span class="num">03</span><h3>Ranger</h3><p>Outputs, thumbnails, metadata, projets.</p></div>
-          <div class="flow-step reveal"><span class="num">04</span><h3>Réutiliser</h3><p>Prompts, presets, workflows, variations.</p></div>
-          <div class="flow-step reveal"><span class="num">05</span><h3>Exporter</h3><p>Dossiers clients, packs, livrables, archives.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="demo" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Démo produit</div>
-            <h2>Une idée devient <span class="gradient-text">un livrable.</span></h2>
-          </div>
-          <p>Le site vend une transformation simple : de l’idée vague à l’output rangé, retrouvable, modifiable et exportable.</p>
-        </div>
-        <div class="demo-grid">
-          <div class="steps-list reveal">
-            <div class="step-row"><b>1</b><p><strong>Décris ton idée.</strong><br>Un prompt, un brief client, une intention créative.</p></div>
-            <div class="step-row"><b>2</b><p><strong>OBSID prépare le flux.</strong><br>Le studio propose le moteur, le mode et le projet.</p></div>
-            <div class="step-row"><b>3</b><p><strong>Le moteur local génère.</strong><br>Image, texte, voix, musique ou workflow selon le contexte.</p></div>
-            <div class="step-row"><b>4</b><p><strong>L’output est indexé.</strong><br>Prompt, métadonnées, état, projet, aperçu.</p></div>
-            <div class="step-row"><b>5</b><p><strong>Tu retrouves et exportes.</strong><br>Variations, packs, dossiers clients, archives.</p></div>
-          </div>
-          <div class="mockup glass reveal">
-            <div class="mock-top"><div class="traffic"><span></span><span></span><span></span></div><strong>OBSID-Studio / Project Command</strong><span class="badge">ORBYSS: THINKING</span></div>
-            <div class="mock-body">
-              <div class="mock-panel"><h3>Projet</h3><p class="small">Pack visuel pour lancement produit. Style sombre, premium, énergie alien.</p><br><span class="badge">Client folder</span></div>
-              <div class="mock-panel"><h3>Prompt</h3><div class="prompt-box">“Crée une direction visuelle dark premium pour un studio IA local-first…”</div><br><div class="output-preview"></div></div>
-              <div class="mock-panel"><h3>Metadata</h3><p class="small">Engine: local<br>Mode: image<br>Proof: indexed<br>Project: launch-pack<br>Reuse: enabled</p></div>
-            </div>
-            <div class="output-queue" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="capacites" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Capability map</div>
-            <h2>Pas juste image, vidéo et musique. <span class="gradient-text">Un studio local complet.</span></h2>
-          </div>
-          <p>La génération est une couche. La valeur, c’est l’expérience : moteurs, assistants, projets, outputs, workflows, contexte, santé et packs.</p>
-        </div>
-        <div class="capabilities">
-          <article class="cap-card card glass reveal"><div class="icon">✦</div><h3>Creative Engines</h3><p>Image, vidéo, musique, voix, texte, prompts, presets.</p></article>
-          <article class="cap-card card glass reveal"><div class="icon">🧠</div><h3>Local Assistants</h3><p>Chat créatif, guidage, raisonnement et tâches orientées production.</p></article>
-          <article class="cap-card card glass reveal"><div class="icon">⇄</div><h3>Tool Bridge</h3><p>Liens contrôlés avec outils locaux, fichiers et services utiles.</p></article>
-          <article class="cap-card card glass reveal"><div class="icon">▣</div><h3>Projects & Outputs</h3><p>Galerie, thumbnails, metadata, recherche et historique.</p></article>
-          <article class="cap-card card glass reveal"><div class="icon">⌬</div><h3>Workflow Vault</h3><p>Presets, templates et chaînes créatives réutilisables.</p></article>
-          <article class="cap-card card glass reveal"><div class="icon">◈</div><h3>Health & Guidance</h3><p>Statuts moteurs, diagnostics clairs et corrections guidées.</p></article>
-          <article class="cap-card card glass reveal"><div class="icon">⬡</div><h3>Store & Packs</h3><p>Ressources, workflows, templates et packs white-label futurs.</p></article>
-          <article class="cap-card card glass reveal"><div class="icon">◎</div><h3>Context & Memory</h3><p>Contexte projet, préférences, preuves et décisions utiles.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="orbyss" class="section">
-      <div class="container">
-        <div class="orbyss-panel">
-          <div class="reveal">
-            <div class="eyebrow">ORBYSS living core</div>
-            <h2>ORBYSS n’est pas une décoration. <span class="gradient-text">C’est l’état vivant du studio.</span></h2>
-            <p class="lead" style="margin-top:20px">ORBYSS traduit visuellement ce que fait le studio : prêt, réflexion, génération, voix, blocage, erreur, récupération, puissance. Elle remplace les tableaux techniques morts par une présence lisible, étrange et utile.</p>
-            <p style="margin-top:22px;color:#fff;font-weight:900;font-size:1.16rem">Pas seulement puissant. Étrange, vivant, lisible.</p>
-            <div class="state-grid" style="margin-top:24px">
-              <div class="state-tile">IDLE</div><div class="state-tile">THINKING</div>
-              <div class="state-tile">GENERATING_IMAGE</div><div class="state-tile">VOICE_READY</div>
-              <div class="state-tile">ENGINE_BLOCKED</div><div class="state-tile">RECOVERY</div>
-            </div>
-          </div>
-          <div class="visual-ref glass reveal">
-            <img src="assets/obsid-studio-look.png" alt="Direction visuelle OBSID-Studio avec ORBYSS et cockpit créatif">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="self" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Vision avancée</div>
-            <h2>Vers l’ordinateur créatif <span class="gradient-text">qui se comprend mieux.</span></h2>
-          </div>
-          <p>OBSID prépare une boucle d’observation et d’adaptation pour rendre le PC créatif plus lisible, plus prévisible et plus stable.</p>
-        </div>
-        <div class="loop-wrap">
-          <div class="loop-core glass reveal">
-            <span class="loop-node n1">OBSERVE<br>PRISM</span>
-            <span class="loop-node n2">ANALYZE<br>ORACLE</span>
-            <span class="loop-node n3">PREDICT<br>VELOCITY</span>
-            <span class="loop-node n4">ADAPT<br>AURA</span>
-            <span class="loop-node n5">ACT<br>SAGE</span>
-            <span class="loop-node n6">LEARN<br>MÉMOIRE</span>
-          </div>
-          <div class="loop-list reveal">
-            <div class="loop-item"><span>PRISM</span><p><strong>Observe</strong> moteurs, ressources, projets et erreurs.</p></div>
-            <div class="loop-item"><span>ORACLE</span><p><strong>Analyse</strong> blocages, dépendances et signaux de performance.</p></div>
-            <div class="loop-item"><span>VELOCITY</span><p><strong>Anticipe</strong> lenteurs, surcharges et risques thermiques.</p></div>
-            <div class="loop-item"><span>AURA</span><p><strong>Adapte</strong> modes créatifs, priorités et workflows.</p></div>
-            <div class="loop-item"><span>SAGE</span><p><strong>Agit</strong> via actions validées, exports et corrections guidées.</p></div>
-            <div class="loop-item"><span>MÉMOIRE</span><p><strong>Apprend</strong> préférences, historique, preuves et contexte projet.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="preuves" class="section">
-      <div class="container">
-        <div class="maturity">
-          <div class="reveal">
-            <div class="eyebrow">Preuves & maturité</div>
-            <h2>Prototype prouvé. <span class="gradient-text">Produit en maturation.</span></h2>
-            <p class="lead" style="margin-top:20px">OBSID-Studio s’appuie sur des briques déjà testées : cockpit, connexion moteurs locaux, génération image via ComfyUI, galerie d’outputs, thumbnails, metadata, réutilisation de prompts et sauvegarde projet.</p>
-            <p style="margin-top:18px">La prochaine étape : finir l’UX, industrialiser ORBYSS, packager proprement et ouvrir une Founder Preview limitée.</p>
-            <div class="badges" style="margin-top:24px">
-              <span class="badge">Image pipeline prouvé</span>
-              <span class="badge">Outputs traçables</span>
-              <span class="badge">Gallery + metadata</span>
-              <span class="badge">ORBYSS à industrialiser</span>
-              <span class="badge">Founder Preview</span>
-            </div>
-          </div>
-          <div class="image-wrap reveal">
-            <img src="assets/obsid-studio-look.png" alt="Aperçu OBSID-Studio produit en maturation">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="roadmap" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Roadmap</div>
-            <h2>De la preuve <span class="gradient-text">au produit.</span></h2>
-          </div>
-          <p>Le but n’est pas de vendre trop tôt. Le but est de montrer la vision, valider l’intérêt, puis ouvrir proprement.</p>
-        </div>
-        <div class="roadmap">
-          <div class="road-item reveal"><h3>Aujourd’hui</h3><p>Prototype et preuves partielles.</p><span class="road-status">En cours</span></div>
-          <div class="road-item reveal"><h3>Démo publique</h3><p>Landing claire + vidéo démo 60–90 secondes.</p><span class="road-status">Prochaine étape</span></div>
-          <div class="road-item reveal"><h3>ORBYSS premium</h3><p>Runtime vivant, états, transitions et intégration produit.</p><span class="road-status">À venir</span></div>
-          <div class="road-item reveal"><h3>Image loop final</h3><p>Création, galerie outputs, metadata, reuse prompt, export.</p><span class="road-status">À venir</span></div>
-          <div class="road-item reveal"><h3>Founder Preview</h3><p>Beta créateurs limitée avec limites honnêtes et feedback prioritaire.</p><span class="road-status">Privé</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="offres" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Accès privé</div>
-            <h2>Avant l’ouverture publique, <span class="gradient-text">une preview limitée.</span></h2>
-          </div>
-          <p>Les offres ne sont pas ouvertes comme produit final : elles servent à cadrer la future commercialisation.</p>
-        </div>
-        <div class="offers">
-          <article class="offer card glass reveal"><h3>Preview gratuite</h3><p>Suivre la vision, recevoir les démos, comprendre l’évolution.</p><div class="price">En préparation</div></article>
-          <article class="offer card glass reveal"><h3>Founder Preview</h3><p>Accès anticipé limité, feedback prioritaire, premiers packs.</p><div class="price">À venir</div></article>
-          <article class="offer card glass reveal"><h3>Creator Edition</h3><p>Studio local utilisable : chat, image, outputs, presets.</p><div class="price">Roadmap</div></article>
-          <article class="offer card glass reveal"><h3>Pro Local Edition</h3><p>Diagnostics avancés, modules vidéo/musique, packs, support.</p><div class="price">Plus tard</div></article>
-          <article class="offer card glass reveal"><h3>Installation accompagnée</h3><p>Aide à la mise en route des moteurs locaux et onboarding.</p><div class="price">Option future</div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="waitlist" class="section">
-      <div class="container">
-        <div class="form-wrap">
-          <div class="reveal">
-            <div class="eyebrow">Waitlist</div>
-            <h2>Rejoindre <span class="gradient-text">l’accès privé.</span></h2>
-            <p class="lead" style="margin-top:20px">Pas de spam. Seulement les nouvelles importantes : démo, Founder Preview, lancement.</p>
-            <div class="badges" style="margin-top:22px">
-              <span class="badge">Financement</span>
-              <span class="badge">Démo vidéo</span>
-              <span class="badge">Founder Preview</span>
-            </div>
-          </div>
-
-          <form id="waitlist-form" class="form-box glass reveal" name="obsid-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="obsid-waitlist">
-            <p style="display:none"><label>Ne pas remplir: <input name="bot-field"></label></p>
-            <div class="form-grid">
-              <div class="field">
-                <label for="name">Nom</label>
-                <input id="name" name="name" autocomplete="name" required placeholder="Ton nom">
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required placeholder="toi@email.com">
-              </div>
-              <div class="field full">
-                <label for="profile">Profil</label>
-                <select id="profile" name="profile">
-                  <option>Créateur</option><option>Freelance</option><option>Agence</option><option>Musicien</option><option>Maker IA</option><option>Entreprise</option><option>Autre</option>
-                </select>
-              </div>
-              <div class="field full">
-                <label for="goal">Ce que tu veux produire</label>
-                <textarea id="goal" name="goal" placeholder="Visuels, packs clients, vidéo, musique, automatisation, workflows..."></textarea>
-              </div>
-              <label class="checkbox full">
-                <input type="checkbox" name="founderInterest" value="yes">
-                <span>Je veux être prévenu pour la Founder Preview.</span>
-              </label>
-            </div>
-            <button class="btn primary" type="submit" style="margin-top:18px;width:100%">Demander l’accès privé</button>
-            <p id="form-status" class="form-note">Sur Netlify, ce formulaire peut être capturé automatiquement. Sur NAS/GitHub Pages, il sert de formulaire prêt à connecter.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">FAQ</div>
-            <h2>Questions <span class="gradient-text">simples.</span></h2>
-          </div>
-        </div>
-        <div class="faq">
-          <details class="reveal"><summary>OBSID-Studio est-il juste un générateur IA ?</summary><p>Non. La génération est une couche. OBSID vise aussi l’organisation, la réutilisation, les projets, les workflows, les outputs, le contexte et les preuves.</p></details>
-          <details class="reveal"><summary>Est-ce un cloud ?</summary><p>Non. Le positionnement est local-first. Des intégrations externes pourront exister plus tard, mais le cœur vise le contrôle local.</p></details>
-          <details class="reveal"><summary>Est-ce NEXUS vendu au public ?</summary><p>Non. NEXUS reste la forge interne. OBSID-Studio est le produit utilisateur final, simplifié et focalisé.</p></details>
-          <details class="reveal"><summary>Tout est-il déjà finalisé ?</summary><p>Non. Le prototype est en maturation. La Founder Preview servira à tester une version limitée, honnête et utile.</p></details>
-          <details class="reveal"><summary>Pourquoi ORBYSS ?</summary><p>ORBYSS rend visibles les états du studio. C’est une interface vivante et utile, pas une décoration.</p></details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div>
-        <strong style="color:#fff">OBSID-Studio</strong><br>
-        Prototype commercial / aperçu privé — version finale en préparation.
-      </div>
-      <div class="footer-links">
-        <a href="#probleme">Problème</a>
-        <a href="#solution">Solution</a>
-        <a href="#orbyss">ORBYSS</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#waitlist">Accès privé</a>
+    <div class="stage reveal">
+      <span class="state st1"><b>READY</b> / LOCAL</span><span class="state st2"><b>THINKING</b> / NEURAL</span><span class="state st3"><b>GENERATING</b> / OUTPUT</span><span class="state st4"><b>RECOVERY</b> / GUIDED</span>
+      <div class="entity" aria-hidden="true">
+        <span class="tendril t1"></span><span class="tendril t2"></span><span class="tendril t3"></span><span class="tendril t4"></span><span class="tendril t5"></span><span class="tendril t6"></span>
+        <span class="shard s1"></span><span class="shard s2"></span><span class="shard s3"></span><span class="shard s4"></span><span class="shard s5"></span><span class="shard s6"></span><span class="core"></span>
       </div>
     </div>
-  </footer>
+  </div>
+  <div class="wrap proof-strip reveal">
+    <div class="proof"><span>preuve</span>Prototype en maturation</div><div class="proof"><span>image</span>Pipeline prouvé</div><div class="proof"><span>outputs</span>Traçables</div><div class="proof"><span>orbyss</span>À industrialiser</div><div class="proof"><span>preview</span>Founder privée</div>
+  </div>
+</section>
 
-  <script src="assets/app.js"></script>
+<section id="produit">
+  <div class="wrap target">
+    <div class="reveal">
+      <div class="eyebrow">Produit cible</div>
+      <h2>Une interface qui rend <span class="grad">la puissance locale utilisable.</span></h2>
+      <p class="lead" style="margin-top:18px">Le cockpit cible réunit ORBYSS, moteurs, outputs, états système et actions créatives dans un espace lisible. Pas NEXUS brut. Pas un tableau de debug. Un studio final.</p>
+    </div>
+    <figure class="shot glass reveal">
+      <img src="assets/obsid-studio-cockpit.png" alt="Aperçu produit cible OBSID-Studio">
+      <figcaption class="caption">Aperçu produit cible — cockpit créatif local-first avec ORBYSS, moteurs, outputs et états système.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="probleme">
+  <div class="wrap">
+    <div class="head reveal"><div><div class="eyebrow">Le vrai problème</div><h2>L'IA locale est puissante. <span class="grad">Mais aujourd'hui, c'est le chaos.</span></h2></div><p>Les moteurs locaux donnent du contrôle, mais la plupart des créateurs se perdent dans les outils, les dossiers, les modèles, les ports et les workflows.</p></div>
+    <div class="grid3"><article class="card glass reveal"><div class="icon">⚙</div><h3>Trop technique</h3><p>Nodes, modèles, ports, scripts, dépendances, versions et chemins dispersés.</p></article><article class="card glass reveal"><div class="icon">⟐</div><h3>Trop fragmenté</h3><p>ComfyUI, LM Studio, Ollama, Forge, TTS, vidéo, musique, outputs : chaque brique vit dans son coin.</p></article><article class="card glass reveal"><div class="icon">⌕</div><h3>Trop dur à réutiliser</h3><p>Prompts perdus, fichiers sans métadonnées, variations impossibles à retrouver.</p></article></div>
+    <div class="compare reveal"><div class="glass"><strong>Cloud IA</strong><p>Simple, mais abonnements, quotas et dépendance.</p></div><div class="glass"><strong>IA locale brute</strong><p>Puissante, mais confuse et fragile.</p></div><div class="glass"><strong>OBSID-Studio</strong><p>Local-first, organisé, visible, réutilisable.</p></div></div>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="wrap">
+    <div class="head reveal"><div><div class="eyebrow">La solution</div><h2>OBSID-Studio remet ton <span class="grad">PC créatif en ordre.</span></h2></div><p>OBSID ne remplace pas tes moteurs. Il les rend utilisables : il connecte, guide, organise et prépare les outputs pour que tu produises au lieu de configurer.</p></div>
+    <div class="flow"><div class="flowstep reveal"><span class="num">01</span><h3>Détecter</h3><p>Moteurs, états, ressources, disponibilité.</p></div><div class="flowstep reveal"><span class="num">02</span><h3>Créer</h3><p>Image, vidéo, musique, voix, texte, workflows.</p></div><div class="flowstep reveal"><span class="num">03</span><h3>Ranger</h3><p>Outputs, thumbnails, metadata, projets.</p></div><div class="flowstep reveal"><span class="num">04</span><h3>Réutiliser</h3><p>Prompts, presets, workflows, variations.</p></div><div class="flowstep reveal"><span class="num">05</span><h3>Exporter</h3><p>Packs, livrables, dossiers clients.</p></div></div>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="wrap">
+    <div class="head reveal"><div><div class="eyebrow">Démo produit</div><h2>Une idée devient <span class="grad">un livrable.</span></h2></div><p>De l'idée vague à l'output rangé, retrouvable, modifiable et exportable.</p></div>
+    <div class="demo"><div class="steps reveal"><div class="step"><b>1</b><p><strong>Décris ton idée.</strong><br>Un prompt, un brief client, une intention créative.</p></div><div class="step"><b>2</b><p><strong>OBSID prépare le flux.</strong><br>Le studio propose le moteur, le mode et le projet.</p></div><div class="step"><b>3</b><p><strong>Le moteur local génère.</strong><br>Image, texte, voix, musique ou workflow selon le contexte.</p></div><div class="step"><b>4</b><p><strong>L'output est indexé.</strong><br>Prompt, metadata, état, projet, aperçu.</p></div><div class="step"><b>5</b><p><strong>Tu retrouves et exportes.</strong><br>Variations, packs, dossiers clients.</p></div></div>
+    <div class="mock glass reveal"><div class="mocktop"><strong>OBSID-Studio / Project Command</strong><span class="badge">ORBYSS: THINKING</span></div><div class="mockbody"><div class="panel"><h3>Projet</h3><p>Pack visuel pour lancement produit. Style sombre, premium, énergie alien.</p></div><div class="panel"><h3>Prompt</h3><div class="prompt">"Crée une direction visuelle dark premium pour un studio IA local-first…"</div><br><div class="preview"></div></div><div class="panel"><h3>Metadata</h3><p>Engine: local<br>Proof: indexed<br>Project: launch-pack<br>Reuse: enabled</p></div></div><div class="queue"><div></div><div></div><div></div><div></div></div></div></div>
+  </div>
+</section>
+
+<section id="capacites">
+  <div class="wrap">
+    <div class="head reveal"><div><div class="eyebrow">Capability map</div><h2>Pas juste image, vidéo et musique. <span class="grad">Un studio local complet.</span></h2></div><p>La génération est une couche. La valeur, c'est l'expérience : moteurs, assistants, projets, outputs, workflows, contexte, santé et packs.</p></div>
+    <div class="grid4"><article class="card glass reveal"><div class="icon">✦</div><h3>Creative Engines</h3><p>Image, vidéo, musique, voix, texte, prompts, presets.</p></article><article class="card glass reveal"><div class="icon">🧠</div><h3>Local Assistants</h3><p>Chat créatif, guidage, raisonnement et tâches orientées production.</p></article><article class="card glass reveal"><div class="icon">⇄</div><h3>MCP / Tool Bridge</h3><p>Connexion contrôlée aux outils, fichiers et apps locales.</p></article><article class="card glass reveal"><div class="icon">▣</div><h3>Projects & Outputs</h3><p>Galerie, thumbnails, metadata, recherche et historique.</p></article><article class="card glass reveal"><div class="icon">⌬</div><h3>Workflow Vault</h3><p>Presets, templates et chaînes créatives réutilisables.</p></article><article class="card glass reveal"><div class="icon">◈</div><h3>Health & Guidance</h3><p>Statuts moteurs, diagnostics clairs et corrections guidées.</p></article><article class="card glass reveal"><div class="icon">⬡</div><h3>Store & Packs</h3><p>Ressources, workflows, templates et packs white-label futurs.</p></article><article class="card glass reveal"><div class="icon">◎</div><h3>Context & Memory</h3><p>Contexte projet, préférences, preuves et décisions utiles.</p></article></div>
+  </div>
+</section>
+
+<section id="orbyss">
+  <div class="wrap orbyss-section">
+    <div class="reveal"><div class="eyebrow">ORBYSS living core</div><h2>ORBYSS n'est pas une décoration. <span class="grad">C'est l'état vivant du studio.</span></h2><p class="lead" style="margin-top:18px">ORBYSS traduit visuellement ce que fait le studio : prêt, réflexion, génération, voix, blocage, erreur, récupération, puissance.</p><p class="strongline">Pas seulement puissant. Étrange, vivant, lisible.</p><div class="states"><div class="tile">IDLE</div><div class="tile">THINKING</div><div class="tile">GENERATING_IMAGE</div><div class="tile">VOICE_READY</div><div class="tile">ENGINE_BLOCKED</div><div class="tile">RECOVERY</div></div></div>
+    <div class="reactor glass reveal"></div>
+  </div>
+</section>
+
+<section id="preuves">
+  <div class="wrap">
+    <div class="head reveal"><div><div class="eyebrow">Preuves & maturité</div><h2>Prototype prouvé. <span class="grad">Produit en maturation.</span></h2></div><p>OBSID-Studio s'appuie sur des briques déjà testées : cockpit, connexion moteurs locaux, génération image via ComfyUI, galerie d'outputs, thumbnails, metadata, réutilisation de prompts et sauvegarde projet.</p></div>
+    <div class="badges reveal"><span class="badge">Image pipeline prouvé</span><span class="badge">Outputs traçables</span><span class="badge">Gallery + metadata</span><span class="badge">ORBYSS à industrialiser</span><span class="badge">Founder Preview en préparation</span></div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <div class="head reveal"><div><div class="eyebrow">Roadmap</div><h2>De la preuve <span class="grad">au produit.</span></h2></div><p>Montrer la vision, valider l'intérêt, puis ouvrir proprement.</p></div>
+    <div class="road"><div class="roaditem reveal"><strong>01</strong><p>Prototype et preuves partielles.</p><span class="tag">En cours</span></div><div class="roaditem reveal"><strong>02</strong><p>Landing + vidéo démo 60–90 secondes.</p><span class="tag">Prochaine étape</span></div><div class="roaditem reveal"><strong>03</strong><p>ORBYSS runtime premium.</p><span class="tag">À venir</span></div><div class="roaditem reveal"><strong>04</strong><p>Image loop final + outputs gallery.</p><span class="tag">À venir</span></div><div class="roaditem reveal"><strong>05</strong><p>Beta créateurs / Founder Preview.</p><span class="tag">Privé</span></div></div>
+  </div>
+</section>
+
+<section id="waitlist">
+  <div class="wrap formwrap">
+    <div class="reveal"><div class="eyebrow">Waitlist</div><h2>Rejoindre <span class="grad">l'accès privé.</span></h2><p class="lead" style="margin-top:18px">Pas de spam. Seulement les nouvelles importantes : démo, Founder Preview, lancement.</p></div>
+    <form class="form glass reveal" name="obsid-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="obsid-waitlist"><p style="display:none"><label>Ne pas remplir <input name="bot-field"></label></p>
+      <div class="formgrid"><div><label>Nom</label><input name="name" type="text" required placeholder="Ton nom"></div><div><label>Email</label><input name="email" type="email" required placeholder="toi@email.com"></div><div class="full"><label>Profil</label><select name="profile"><option>Créateur</option><option>Freelance</option><option>Agence</option><option>Musicien</option><option>Maker IA</option><option>Entreprise</option><option>Autre</option></select></div><div class="full"><label>Ce que tu veux produire</label><textarea name="goal" placeholder="Visuels, packs clients, vidéo, musique, workflows..."></textarea></div><label class="check full"><input type="checkbox" name="founderInterest" value="yes"><span>Je veux être prévenu pour la Founder Preview.</span></label></div>
+      <button class="btn primary" style="margin-top:18px;width:100%">Demander l'accès privé</button>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head reveal"><div><div class="eyebrow">FAQ</div><h2>Questions <span class="grad">simples.</span></h2></div></div>
+    <details class="reveal"><summary>OBSID-Studio est-il juste un générateur IA ?</summary><p>Non. La génération est une couche. OBSID vise aussi organisation, réutilisation, projets, workflows, outputs, contexte et preuves.</p></details>
+    <details class="reveal"><summary>Est-ce un cloud ?</summary><p>Non. Le positionnement est local-first. Des intégrations externes pourront exister, mais le cœur vise le contrôle local.</p></details>
+    <details class="reveal"><summary>Est-ce NEXUS vendu au public ?</summary><p>Non. NEXUS reste la forge interne. OBSID-Studio est le produit utilisateur final, simplifié et focalisé.</p></details>
+    <details class="reveal"><summary>Tout est-il déjà finalisé ?</summary><p>Non. Le prototype est en maturation. La Founder Preview servira à tester une version limitée, honnête et utile.</p></details>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><div><strong style="color:#fff">OBSID-Studio</strong><br>Prototype commercial / aperçu privé — version finale en préparation.</div><div><a href="#probleme">Problème</a> · <a href="#solution">Solution</a> · <a href="#orbyss">ORBYSS</a> · <a href="#waitlist">Accès privé</a></div></div></footer>
+<script>
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
