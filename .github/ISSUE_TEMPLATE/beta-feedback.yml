@@ -1,0 +1,114 @@
+name: "🚀 Feedback Beta Test"
+description: "Utilisez ce template pour partager votre retour sur la beta test de OBSID-Studio"
+title: "[Beta Feedback] <Titre de votre retour>"
+labels: ["beta", "feedback"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de partager votre retour sur OBSID-Studio !
+        Votre avis nous aide à améliorer le produit avant la sortie officielle.
+
+  - type: input
+    id: version
+    attributes:
+      label: "Version testée"
+      description: "Quelle version de OBSID-Studio utilisez-vous ?"
+      placeholder: "ex: v0.1.0-beta"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: "Système d'exploitation"
+      description: "Sur quel OS avez-vous testé OBSID-Studio ?"
+      options:
+        - Windows 10/11
+        - macOS (Intel)
+        - macOS (Apple Silicon)
+        - Linux (Ubuntu/Debian)
+        - Linux (Autre)
+        - Autre (précisez ci-dessous)
+    validations:
+      required: true
+
+  - type: input
+    id: os_other
+    attributes:
+      label: "Autre OS (si applicable)"
+      description: "Précisez si vous avez sélectionné 'Autre'"
+      placeholder: "ex: Fedora 38"
+
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: "Matériel"
+      description: "Quel est votre matériel ?"
+      options:
+        - PC Portable
+        - PC Fixe
+        - MacBook
+        - iMac
+        - Serveur
+        - Autre
+    validations:
+      required: true
+
+  - type: input
+    id: gpu
+    attributes:
+      label: "GPU"
+      description: "Quel GPU utilisez-vous ?"
+      placeholder: "ex: NVIDIA RTX 4090, AMD RX 7900 XT, Apple M2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_you_liked
+    attributes:
+      label: "✅ Ce que vous avez aimé"
+      description: "Quelles fonctionnalités ou aspects de OBSID-Studio avez-vous appréciés ?"
+      placeholder: "ex: L'interface ORBYSS est très intuitive, les workflows sont puissants..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: issues
+    attributes:
+      label: "❌ Problèmes rencontrés"
+      description: "Décrivez les bugs ou problèmes que vous avez rencontrés"
+      placeholder: "ex: Le générateur d'images plante quand je charge un modèle >4GB..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: "💡 Suggestions d'amélioration"
+      description: "Quelles fonctionnalités ou améliorations aimeriez-vous voir ?"
+      placeholder: "ex: Ajouter un système de tags pour organiser les outputs..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: rating
+    attributes:
+      label: "🌟 Note globale"
+      description: "Comment noteriez-vous OBSID-Studio dans son état actuel ?"
+      options:
+        - "⭐⭐⭐⭐⭐ (Excellent)"
+        - "⭐⭐⭐⭐ (Très bon)"
+        - "⭐⭐⭐ (Bon)"
+        - "⭐⭐ (Moyen)"
+        - "⭐ (À améliorer)"
+    validations:
+      required: true
+
+  - type: checkbox
+    id: terms
+    attributes:
+      label: "Je confirme que mon retour est constructif et respecte le code de conduite"
+      required: true

@@ -1,0 +1,108 @@
+name: "🐛 Rapport de Bug"
+description: "Signalez un bug pour aider à améliorer OBSID-Studio"
+title: "[Bug] <Description courte>"
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de signaler les bugs ! Plus vous donnez de détails, plus nous pourrons corriger rapidement.
+
+  - type: input
+    id: version
+    attributes:
+      label: "Version"
+      description: "Quelle version de OBSID-Studio utilisez-vous ?"
+      placeholder: "ex: v0.1.0-beta"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: "Système d'exploitation"
+      options:
+        - Windows 10/11
+        - macOS (Intel)
+        - macOS (Apple Silicon)
+        - Linux (Ubuntu/Debian)
+        - Linux (Autre)
+    validations:
+      required: true
+
+  - type: input
+    id: gpu
+    attributes:
+      label: "GPU"
+      placeholder: "ex: NVIDIA RTX 4090, AMD RX 7900 XT, Apple M2"
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Sévérité"
+      description: "À quel point ce bug impacte-t-il votre expérience ?"
+      options:
+        - Bloquant (impossible d'utiliser une fonctionnalité)
+        - Majeur (fonctionnalité partiellement utilisable)
+        - Mineur (problème cosmétique ou mineur)
+        - Suggestion (pas vraiment un bug)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Décrivez le bug de manière claire et détaillée"
+      placeholder: "ex: Quand je clique sur 'Générer', l'application plante avec l'erreur XYZ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Étapes pour reproduire"
+      description: "Comment reproduire ce bug ?"
+      placeholder: |
+        1. Aller dans...
+        2. Cliquer sur...
+        3. Attendre que...
+        4. Le bug se produit
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Comportement attendu"
+      description: "Que devraient-il se passer normalement ?"
+      placeholder: "ex: L'image devrait être générée sans erreur"
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Comportement réel"
+      description: "Que se passe-t-il réellement ?"
+      placeholder: "ex: L'application plante avec une erreur 500"
+
+  - type: input
+    id: screenshots
+    attributes:
+      label: "Capture d'écran"
+      description: "Si possible, ajoutez une capture d'écran (glissez-déposez dans l'issue)"
+      placeholder: "Ajoutez une capture d'écran"
+
+  - type: input
+    id: logs
+    attributes:
+      label: "Logs"
+      description: "Si vous avez des logs d'erreur, partagez-les ici"
+      placeholder: "Collez les logs ici"
+
+  - type: checkbox
+    id: terms
+    attributes:
+      label: "Je confirme que ce rapport est précis et complet"
+      required: true
