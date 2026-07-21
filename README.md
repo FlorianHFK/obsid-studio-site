@@ -1,241 +1,80 @@
-<p align="center">
-  <img src="assets/images/readme-hero.svg" alt="OBSID-Studio" width="100%">
-</p>
+# OBSID-Studio
 
-<h1 align="center">OBSID-Studio</h1>
+> **Local AI Creative Reactor** - Transformez votre PC en cockpit créatif IA 100% local.
 
-<p align="center">
-  <b>Local-first AI Creative OS</b>
-  <br>
-  <sub>✨ Beta Test Ouverte — 25 places restantes ✨</sub>
-</p>
+## 📖 À propos
 
-<p align="center">
-  <a href="https://florianhfk.github.io/obsid-studio-site/"><b>🌐 Site Web</b></a> •
-  <a href="#beta-test"><b>🚀 Rejoindre la Beta</b></a> •
-  <a href="#roadmap"><b>🗺 Roadmap</b></a> •
-  <a href="#vision"><b>🎯 Vision</b></a> •
-  <a href="#tech-stack"><b>🛠 Tech Stack</b></a>
-</p>
+OBSID-Studio est une application Windows native (.NET 8 / Avalonia) qui vous permet de transformer votre PC en un cockpit créatif IA complet, avec génération locale d'images, vidéo, musique, voix et plus - **sans cloud, sans télémétrie, sans limites**.
 
-<p align="center">
-  <img alt="Status" src="https://img.shields.io/badge/status-beta_test_ouverte-8b5cf6?style=for-the-badge">
-  <img alt="Local-First" src="https://img.shields.io/badge/local_first-yes-17d9ff?style=for-the-badge">
-  <img alt="ORBYSS" src="https://img.shields.io/badge/ORBYSS-living_core-ff4fd8?style=for-the-badge">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge">
-  <img alt="Stars" src="https://img.shields.io/github/stars/FlorianHFK/obsid-studio-site?style=for-the-badge&color=ffd166">
-  <img alt="Issues" src="https://img.shields.io/github/issues/FlorianHFK/obsid-studio-site?style=for-the-badge&color=ff4fd8">
-</p>
+## 🌐 Site Officiel
+
+👉 [Visitez le site](https://florianhfk.github.io/obsid-studio-site/) pour découvrir toutes les fonctionnalités et devenir Beta Founder.
 
 ---
 
-## 🚀 **Beta Test Ouverte**
+## 🚀 Fonctionnalités Clés
 
-**OBSID-Studio entre en phase de beta privée !** 
-Nous cherchons **100 testeurs** pour façonner l'avenir de la création IA locale.
+| Fonctionnalité | Description |
+|---------------|-------------|
+| **ORBYSS** | Entité IA embarquée avec chat agentique, orbe 3D vivante, états visibles |
+| **Génération Multi-Média** | Images (ComfyUI, Forge/SD, A1111), vidéo, musique, voix/TTS |
+| **Engine Health Center** | Surveillance et réparation automatique des moteurs IA |
+| **Galerie Indexée** | Organisation complète de tous vos outputs |
+| **13 Thèmes Premium** | Interface personnalisable avec effets immersifs |
+| **Permissions & Sécurité** | Contrôle granulaire - aucune action sans accord |
 
-### ✅ **Ce que vous obtenez**
-- Accès **anticipé** à OBSID-Studio
-- Fonctionnalités **premium** pendant la beta
-- Support **prioritaire**
-- Influence sur le **développement**
-- Tarif **early-bird à vie**
+## 💰 Modèle Commercial
 
-### 📝 **Comment s'inscrire**
-1. Rendez-vous sur [le site web](https://florianhfk.github.io/obsid-studio-site/#beta)
-2. Remplissez le **formulaire de beta test**
-3. Attendez notre email de confirmation (sous 48h)
+- **Licence payante par machine** - Activation par clé
+- **Beta Founder : 29 €** (au lieu de 79 € au lancement)
+- **Accès immédiat** à la beta
+- **Licence à vie** sur la v1
+- **Garantie remboursement** : 14 jours
 
-**🔥 25 places restantes — Dépêchez-vous !**
+> ⚠️ **STRATÉGIE ASSUMÉE** : OBSID-Studio adoptera peut-être un modèle par abonnement pour la v2+. Les Beta Founders conservent leur licence v1 **à vie**, même dans ce cas. **Acheter maintenant = le meilleur deal qui existera jamais.**
 
----
+## 🎯 Configuration Requise
 
-## 🎯 **Vision**
+| Niveau | Système | RAM | GPU |
+|--------|---------|-----|-----|
+| **Minimum** | Windows 10/11 x64 | 16 Go | GPU dédié |
+| **Recommandé** | Windows 11 x64 | 32 Go | NVIDIA 8 Go+ |
 
-**OBSID-Studio** est un **cockpit IA local-first premium**.
+## 📦 Installation
 
-Ce n'est pas juste un générateur. C'est une **couche produit** au-dessus d'une stack IA locale complexe :
+1. Téléchargez l'application depuis le site officiel
+2. Exécutez l'installateur
+3. Activez avec votre clé de licence (reçue après achat)
+4. Lancez OBSID-Studio et commencez à créer !
 
-| 🎨 **Créer** | 🤖 **Assister** | 📁 **Organiser** |
-|-------------|----------------|------------------|
-| Image, vidéo, musique, voix, texte | Guidage projet, prompts, workflows | Outputs, preuves, packs |
-| Generator Store | Agents locaux | Santé des moteurs |
-| Creative Packs | Suggestions prédictives | Diagnostic guidé |
+## 🔒 Licence
 
-<p align="center">
-  <img src="assets/images/real-studio-preview.svg" alt="OBSID-Studio Preview" width="80%">
-</p>
+OBSID-Studio est un **produit propriétaire**. Aucune partie de ce logiciel ne peut être reproduite, distribuée ou modifiée sans autorisation écrite explicite.
 
----
+Voir [LICENSE.md](LICENSE.md) pour les termes complets.
 
-## 🏗 **Architecture Produit**
+## 🤝 Communauté
 
-OBSID-Studio est **NEXUS-backed** :
-- **NEXUS** reste la forge
-- **OBSITOOLS** reste le cockpit opérateur
-- **OBSID-Studio** devient l'expérience produit propre
+- **Discord privé** : Accès réservé aux Beta Founders
+- **Roadmap** : Votez pour les fonctionnalités prioritaires
+- **Support** : contact@obsid-studio.com
 
-<p align="center">
-  <img src="assets/images/readme-product-map.svg" alt="Product Architecture" width="80%">
-</p>
+## 🏷️ Badges
 
----
-
-## 🌌 **ORBYSS**
-
-ORBYSS est **l'interface sensible** du studio.
-
-Il reflète l'état du produit en temps réel :
-- **Idle** | **Thinking** | **Generating** | **Repair** | **Recovery** | **Export**
-
-**Identité visuelle** : Asymétrique, cristallin, biomécanique, lumineux, réactif, premium.
-
-<p align="center">
-  <img src="assets/images/readme-motion.svg" alt="ORBYSS Autonomous Loop" width="60%">
-</p>
+![Proprietary License](https://img.shields.io/badge/License-Proprietary-%238B5CF6?style=for-the-badge)
+![Beta Ouverte](https://img.shields.io/badge/Beta%20Ouverte-100%20places-%2322D3EE?style=for-the-badge)
+![Windows](https://img.shields.io/badge/Windows-10%2F11-%230078D6?style=for-the-badge&logo=windows)
+![.NET 8](https://img.shields.io/badge/.NET-8.0-%23512BD4?style=for-the-badge&logo=dotnet)
+![Avalonia](https://img.shields.io/badge/Avalonia-UI-%23FF7700?style=for-the-badge)
 
 ---
 
-## 🗺 **Roadmap**
+## 📞 Contact
 
-| Étape | Statut | Description |
-|-------|--------|-------------|
-| 01 | ✅ **Terminé** | Site vitrine |
-| 02 | ✅ **Terminé** | Prototype cockpit + ORBYSS |
-| 03 | ✅ **Terminé** | Runtime moteurs + diagnostics |
-| 04 | ✅ **Terminé** | Assistant + System Care |
-| 05 | 🔥 **En cours** | **Beta Test Privée (OUVERTE)** |
-| 06 | 🚧 **À venir** | Version publique |
+- **Email** : contact@obsid-studio.com
+- **Site** : [obsid-studio-site](https://florianhfk.github.io/obsid-studio-site/)
+- **Achat** : [Lemon Squeezy](https://obsidstudio.lemonsqueezy.com/checkout)
 
 ---
 
-## 🛠 **Tech Stack**
-
-| Catégorie | Technologie | Usage |
-|----------|-------------|-------|
-| **Frontend** | Vanilla HTML/CSS/JS | Site statique ultra-rapide |
-| **Build** | [Vite](https://vitejs.dev/) | Développement et production |
-| **CSS** | Custom + CSS Variables | Design futuriste |
-| **JS** | Vanilla ES6+ | Navigation fluide |
-| **PWA** | Service Worker | Cache offline |
-| **Hosting** | GitHub Pages | Hébergement gratuit |
-
-### 🔧 **Optimisations**
-- **Images** : WebP (PNG → -94%), SVGO pour les SVG
-- **CSS** : Minifié avec clean-css
-- **JS** : Minifié avec Terser
-- **HTML** : Minifié avec html-minifier
-- **Lazy Loading** : `loading="lazy"` sur toutes les images
-- **Service Worker** : Cache des assets pour le hors-ligne
-
----
-
-## 📦 **Structure du Projet**
-
-```
-obsid-studio-site/
-├── index.html              # Page principale
-├── assets/
-│   ├── css/
-│   │   └── main.min.css    # CSS minifié
-│   ├── js/
-│   │   └── main.min.js     # JS minifié
-│   └── images/             # Images optimisées
-│       ├── favicon.svg
-│       ├── obsid-mark.svg
-│       ├── readme-hero.svg
-│       ├── real-studio-preview.svg
-│       ├── obsid-studio-look.webp  # Converti depuis PNG
-│       └── ...
-├── sw.js                   # Service Worker
-├── sitemap.xml            # Sitemap pour le SEO
-├── vite.config.js          # Configuration Vite
-├── package.json            # Dépendances npm
-├── build.sh                # Script de build
-├── .gitignore              # Fichiers ignorés
-└── README.md               # Ce fichier
-```
-
----
-
-## 🏃 **Getting Started**
-
-### 📥 **Installation**
-
-1. Cloner le dépôt :
-   ```bash
-   git clone https://github.com/FlorianHFK/obsid-studio-site.git
-   cd obsid-studio-site
-   ```
-
-2. Installer les dépendances :
-   ```bash
-   npm install
-   ```
-
-3. Démarrer le serveur de développement :
-   ```bash
-   npm run dev
-   ```
-   > Le site sera disponible sur [http://localhost:5173](http://localhost:5173)
-
-### 🏗 **Build pour la Production**
-
-```bash
-npm run build
-```
-> Génère un dossier `dist/` avec les assets optimisés.
-
-### 📦 **Minification Manuelle**
-
-Si vous ne voulez pas utiliser Vite :
-
-```bash
-# Minifier le CSS
-npm run minify:css
-
-# Minifier le JS
-npm run minify:js
-
-# Minifier le HTML
-npm run minify:html
-```
-
----
-
-## 🤝 **Contribuer**
-
-Les contributions sont les bienvenues ! Voici comment aider :
-
-1. **Forker** le projet
-2. Créer une **branche** (`git checkout -b feature/ma-fonctionnalité`)
-3. **Commiter** vos changements (`git commit -m 'feat: ajouter X'`)
-4. **Pousser** sur la branche (`git push origin feature/ma-fonctionnalité`)
-5. Ouvrir une **Pull Request**
-
-### 📝 **Types de contributions**
-- 🐛 **Bug fixes**
-- ✨ **Nouvelles fonctionnalités**
-- 📚 **Documentation**
-- 🎨 **Design/UX**
-- 🔍 **Tests**
-
----
-
-## 📜 **License**
-
-Ce projet est sous **MIT License** — voir [LICENSE](LICENSE) pour plus de détails.
-
----
-
-<p align="center">
-  <b>OBSID-Studio transforme l'IA locale en une expérience produit premium.</b>
-  <br>
-  <sub>Rejoignez la révolution 🚀</sub>
-</p>
-
-<p align="center">
-  <a href="https://florianhfk.github.io/obsid-studio-site/">🌐 Visitez le site</a> •
-  <a href="#beta-test">🚀 Rejoignez la Beta</a> •
-  <a href="https://twitter.com/FlorianHFK">🐦 Twitter</a>
-</p>
+> **© 2026 Florian HFK** - Tous droits réservés
