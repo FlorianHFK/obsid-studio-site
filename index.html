@@ -1,490 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OBSID-Studio - Local AI Creative Reactor. Transformez votre PC en cockpit créatif IA 100% local. Génération d'images, vidéo, musique, voix et plus, sans cloud.">
-    <meta name="keywords" content="IA locale, génération d'images, ComfyUI, Stable Diffusion, LLM local, cockpit créatif, OBSID-Studio, ORBYSS">
-    <meta name="author" content="Florian HFK">
-    <meta property="og:title" content="OBSID-Studio - Local AI Creative Reactor">
-    <meta property="og:description" content="Transformez votre PC en cockpit créatif IA 100% local. Beta Founder à 29€ - Places limitées.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/images/og-image.svg">
-    <meta name="theme-color" content="#050508">
-    <title>OBSID-Studio | Local AI Creative Reactor</title>
-    
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OBSID Studio rassemble création IA locale, intelligence agentique et diagnostic système dans un cockpit Windows unifié.">
+  <meta name="theme-color" content="#070710">
+  <meta property="og:title" content="OBSID Studio — Local AI Creative Reactor">
+  <meta property="og:description" content="Le cockpit IA local pour créer, piloter et comprendre votre machine.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.svg">
+  <title>OBSID Studio — Local AI Creative Reactor</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <!-- Language Switcher -->
-    <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="fr">FR</button>
-        <span class="lang-divider">|</span>
-        <button class="lang-btn" data-lang="en">EN</button>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="OBSID Studio — Accueil">
+        <span class="brand-mark"><img src="assets/images/obsid_studio_1024x1024.png" alt=""></span>
+        <span><strong>OBSID</strong><em> Studio</em></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <a href="#modes">Le cockpit</a>
+        <a href="#interface">Interface</a>
+        <a href="#beta">Beta Founder</a>
+        <a class="button button-small" href="https://obsidstudio.lemonsqueezy.com/checkout">Accéder à la beta <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="assets/images/obsid_studio_1024x1024.png" alt="OBSID-Studio Logo" class="logo-icon">
-                <span class="logo-text">OBSID<span class="logo-accent">-Studio</span></span>
-            </div>
-            <nav class="nav">
-                <a href="#features" class="nav-link">Fonctionnalités</a>
-                <a href="#screenshots" class="nav-link">Galerie</a>
-                <a href="#pricing" class="nav-link">Tarifs</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-            </nav>
-            <a href="#pricing" class="cta-btn header-cta">Devenir Beta Founder</a>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid"></div>
+      <div class="shell hero-layout">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Local AI Creative Reactor</p>
+          <h1>Une machine créative.<br><i>Une seule surface de contrôle.</i></h1>
+          <p class="hero-lede">OBSID Studio réunit IA locale, création multimédia et pilotage intelligent de ton environnement Windows — sans transformer ton bureau en usine à gaz.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://obsidstudio.lemonsqueezy.com/checkout">Devenir Beta Founder <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="#interface">Voir le cockpit <span aria-hidden="true">↓</span></a>
+          </div>
+          <dl class="hero-proof" aria-label="Repères produit">
+            <div><dt>100%</dt><dd>local-first</dd></div>
+            <div><dt>Win</dt><dd>10 / 11 x64</dd></div>
+            <div><dt>1×</dt><dd>licence par machine</dd></div>
+          </dl>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    <span>BETA OUVERTE</span>
-                    <span class="beta-counter" id="betaCounter">100 places disponibles</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line">Local AI</span>
-                    <span class="title-line gradient-text">Creative Reactor</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Transformez votre PC en cockpit créatif IA 100% local. 
-                    Générez, contrôlez, créez - sans limites, sans cloud.
-                </p>
-                <div class="hero-cta-group">
-                    <a href="https://obsidstudio.lemonsqueezy.com/checkout" class="cta-btn primary">
-                        <span class="btn-text">Devenir Beta Founder</span>
-                        <span class="btn-price">29 € <span class="btn-old-price">79 €</span></span>
-                    </a>
-                    <div class="hero-trust">
-                        <span class="trust-icon">🔒</span>
-                        <span>Achat définitif - Pas d'abonnement</span>
-                    </div>
-                </div>
-                <p class="hero-guarantee">
-                    <span class="guarantee-icon">✓</span>
-                    Garantie remboursement 14 jours - Licence à vie pour les Beta Founders
-                </p>
-            </div>
-            <div class="hero-visual">
-                <div class="visual-placeholder">
-                    <!-- Placeholder pour screenshot principal -->
-                    <img src="assets/images/obsid_studio_splash_orbyss_1920x1080.png" alt="OBSID-Studio Interface" class="hero-image">
-                </div>
-                <div class="visual-effects">
-                    <div class="effect-lightning"></div>
-                    <div class="effect-glow"></div>
-                    <div class="effect-particle" style="--delay: 0s;"></div>
-                    <div class="effect-particle" style="--delay: 0.5s;"></div>
-                    <div class="effect-particle" style="--delay: 1s;"></div>
-                </div>
-            </div>
+        <div class="hero-art reveal" aria-label="ORBYSS, l’entité d’OBSID Studio">
+          <div class="art-glow"></div>
+          <img src="assets/images/obsid_studio_splash_orbyss_1920x1080.png" alt="ORBYSS, l'entité centrale d'OBSID Studio">
+          <div class="art-caption"><span class="pulse"></span> ORBYSS / Online</div>
         </div>
-        <div class="scroll-indicator">
-            <span>Découvrez</span>
-            <div class="scroll-arrow"></div>
-        </div>
+      </div>
+      <div class="shell hero-footer"><span>Scroll to explore</span><span class="line"></span><span>01 — 04</span></div>
     </section>
 
-    <!-- Pourquoi Local Section -->
-    <section class="why-local" id="why-local">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Pourquoi choisir le local ?</span>
-                <h2 class="section-title">La révolution <span class="gradient-text">100% Local</span></h2>
-                <p class="section-subtitle">
-                    Votre créativité mérite plus que du cloud. 
-                    Avec OBSID-Studio, tout reste sur votre machine - rapide, sécurisé, illimité.
-                </p>
-            </div>
-            <div class="features-grid three-cols">
-                <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
-                    <h3 class="feature-title">Confidentialité Absolue</h3>
-                    <p class="feature-description">
-                        Aucune donnée ne quitte votre PC. Pas de télémétrie, pas de tracking, 
-                        pas de fuite de vos créations ou prompts.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">Coût Zéro Cloud</h3>
-                    <p class="feature-description">
-                        Plus de factures mensuelles pour les API. Une fois acheté, 
-                        générez autant que vous voulez, sans limites.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎛️</div>
-                    <h3 class="feature-title">Contrôle Total</h3>
-                    <p class="feature-description">
-                        Vous choisissez les modèles, les paramètres, les permissions. 
-                        ORBYSS n'agit que sur votre validation explicite.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <section class="statement section">
+      <div class="shell statement-grid reveal">
+        <p class="eyebrow">Un cockpit, pas un catalogue</p>
+        <h2>Les outils locaux sont puissants.<br>Les faire <i>coopérer</i> est le vrai défi.</h2>
+        <p>OBSID Studio organise les moteurs, les modèles, les sorties et les actions dans une interface pensée pour garder le contrôle. Le but n’est pas d’ajouter des boutons : c’est de retirer le bruit.</p>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Cockpit Créatif</span>
-                <h2 class="section-title">Fonctionnalités <span class="gradient-text">Puissantes</span></h2>
-                <p class="section-subtitle">
-                    OBSID-Studio combine le meilleur des outils IA locaux dans une interface unifiée.
-                </p>
-            </div>
-            <div class="features-grid six-cols">
-                <!-- ORBYSS -->
-                <div class="feature-card large">
-                    <div class="feature-image">
-                        <img src="assets/images/orbyss_04_violet_blue_official.png" alt="ORBYSS AI Entity" class="feature-img">
-                    </div>
-                    <div class="feature-content">
-                        <span class="feature-category">Entité IA</span>
-                        <h3 class="feature-title">ORBYSS</h3>
-                        <p class="feature-description">
-                            Votre assistant IA embarqué. Chat agentique intelligent, 
-                            orbe 3D vivante avec états visibles, outils système intégrés.
-                            Aucune action sans votre accord explicite.
-                        </p>
-                        <div class="feature-tags">
-                            <span class="tag">Chat Agentique</span>
-                            <span class="tag">Orbe 3D</span>
-                            <span class="tag">Permissions</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Génération Multi-Média -->
-                <div class="feature-card large">
-                    <div class="feature-image">
-                        <div class="placeholder-icon">🎨</div>
-                    </div>
-                    <div class="feature-content">
-                        <span class="feature-category">Génération</span>
-                        <h3 class="feature-title">Multi-Média Local</h3>
-                        <p class="feature-description">
-                            Images (ComfyUI, Forge/SD, A1111), vidéo, musique, 
-                            voix/TTS - tout généré localement avec vos modèles préférés.
-                        </p>
-                        <div class="feature-tags">
-                            <span class="tag">ComfyUI</span>
-                            <span class="tag">Stable Diffusion</span>
-                            <span class="tag">TTS</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Engine Health Center -->
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Engine Health Center</h3>
-                    <p class="feature-description">
-                        Surveillance en temps réel de vos moteurs IA. 
-                        Démarrage, réparation automatique, sans faux "READY".
-                    </p>
-                </div>
-                
-                <!-- Galerie -->
-                <div class="feature-card">
-                    <div class="feature-icon">📁</div>
-                    <h3 class="feature-title">Galerie Indexée</h3>
-                    <p class="feature-description">
-                        Tous vos outputs organisés, recherchables, 
-                        avec métadonnées complètes.
-                    </p>
-                </div>
-                
-                <!-- Thèmes & Effets -->
-                <div class="feature-card">
-                    <div class="feature-icon">🎭</div>
-                    <h3 class="feature-title">13 Thèmes Complets</h3>
-                    <p class="feature-description">
-                        Interface adaptable : 13 thèmes premium, 
-                        effets immersifs (foudre, arcs, glitchs).
-                    </p>
-                </div>
-                
-                <!-- Sécurité -->
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Permissions & Sécurité</h3>
-                    <p class="feature-description">
-                        Contrôle granulaire des accès. 
-                        ORBYSS demande toujours avant d'agir.
-                    </p>
-                </div>
-            </div>
+    <section class="modes section" id="modes">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Trois espaces, une continuité</p>
+          <h2>Le bon niveau de puissance,<br><i>au bon moment.</i></h2>
         </div>
+        <div class="mode-grid">
+          <article class="mode-card mode-orbyss reveal">
+            <div class="card-index">01 / ORBYSS</div>
+            <img src="assets/images/orbyss_04_violet_blue_official.png" alt="ORBYSS Brain Entity">
+            <div class="mode-content">
+              <h3>Un cerveau visible,<br>pas une boîte noire.</h3>
+              <p>Chat local, contexte, voix, outils et actions se rejoignent autour d’ORBYSS. L’entité expose ce qu’elle fait et reste dans le périmètre que tu lui donnes.</p>
+              <ul><li>LLM & contexte</li><li>TTS / voix</li><li>Actions assistées</li></ul>
+            </div>
+          </article>
+          <article class="mode-card reveal">
+            <div class="card-index">02 / CREATIVE SUITE</div>
+            <div class="mode-icon creative-icon">✦</div>
+            <div class="mode-content">
+              <h3>Créer sans sortir<br>du cockpit.</h3>
+              <p>Images, vidéo, musique et voix passent par les moteurs locaux liés à ton environnement. Les créations restent retrouvables, exploitables et à toi.</p>
+              <ul><li>Images & workflows</li><li>Audio & vidéo</li><li>Galerie d’outputs</li></ul>
+            </div>
+          </article>
+          <article class="mode-card reveal">
+            <div class="card-index">03 / OBSITOOLS</div>
+            <div class="mode-icon tools-icon">⌘</div>
+            <div class="mode-content">
+              <h3>Voir l’état réel.<br>Agir avec méthode.</h3>
+              <p>Diagnostic, orchestration et preuves runtime : OBSITOOLS relie les opérations à leur état réel, au lieu d’afficher des voyants décoratifs.</p>
+              <ul><li>Diagnostic système</li><li>Runtimes & services</li><li>Actions traçables</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Screenshots Section -->
-    <section class="screenshots" id="screenshots">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Aperçu</span>
-                <h2 class="section-title">Galerie <span class="gradient-text">Screenshots</span></h2>
-                <p class="section-subtitle">
-                    Découvrez l'interface premium d'OBSID-Studio.
-                </p>
-            </div>
-            <div class="screenshots-grid">
-                <div class="screenshot-item" data-caption="OBSID-Studio - Interface Violet">
-                    <img src="assets/images/obsid-studio-violet.png" alt="Interface Violet" class="screenshot-img">
-                    <div class="screenshot-overlay">
-                        <span class="screenshot-icon">🔍</span>
-                    </div>
-                </div>
-                <div class="screenshot-item" data-caption="OBSID-Studio - Thème Dark">
-                    <img src="assets/images/obsid-studio-dark.png" alt="Thème Dark" class="screenshot-img">
-                    <div class="screenshot-overlay">
-                        <span class="screenshot-icon">🔍</span>
-                    </div>
-                </div>
-                <div class="screenshot-item" data-caption="OBSID-Studio - Thème Blanc">
-                    <img src="assets/images/obsid-studio-blanc.png" alt="Thème Blanc" class="screenshot-img">
-                    <div class="screenshot-overlay">
-                        <span class="screenshot-icon">🔍</span>
-                    </div>
-                </div>
-                <div class="screenshot-item" data-caption="OBSID-Studio - Splash ORBYSS">
-                    <img src="assets/images/obsid_studio_splash_orbyss_1920x1080.png" alt="Splash ORBYSS" class="screenshot-img">
-                    <div class="screenshot-overlay">
-                        <span class="screenshot-icon">🔍</span>
-                    </div>
-                </div>
-            </div>
+    <section class="interface section" id="interface">
+      <div class="shell">
+        <div class="section-heading split reveal">
+          <div><p class="eyebrow">Une interface qui respire</p><h2>La puissance doit rester<br><i>lisible en dix secondes.</i></h2></div>
+          <p>Une zone de conversation claire. Des signaux utiles. Des sorties vivantes. Le reste est à sa place, pas au milieu de ton chemin.</p>
         </div>
+        <figure class="cockpit-frame reveal" data-lightbox="assets/images/obsid-studio-violet.png" data-caption="OBSID Studio — vue cockpit">
+          <img src="assets/images/obsid-studio-violet.png" alt="Capture du cockpit OBSID Studio">
+          <figcaption><span>COCKPIT / LIVE VIEW</span><button type="button">Agrandir <b>↗</b></button></figcaption>
+        </figure>
+        <div class="interface-notes reveal">
+          <div><span>01</span><p><b>Conversation centrale</b> pour demander, décider et piloter sans jongler entre les fenêtres.</p></div>
+          <div><span>02</span><p><b>ORBYSS connecté</b> aux actions, à la voix et aux capacités réellement disponibles.</p></div>
+          <div><span>03</span><p><b>Outputs visibles</b> : la création ne disparaît pas une fois le job terminé.</p></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Offre Exclusive</span>
-                <h2 class="section-title">Devenez <span class="gradient-text">Beta Founder</span></h2>
-                <p class="section-subtitle">
-                    Accès immédiat à la beta - Places strictement limitées à 100 testeurs.
-                </p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">BEST DEAL</div>
-                    <div class="pricing-header">
-                        <h3 class="pricing-title">Beta Founder</h3>
-                        <p class="pricing-subtitle">Accès exclusif à la version 1</p>
-                    </div>
-                    <div class="pricing-price">
-                        <span class="price-currency">€</span>
-                        <span class="price-amount">29</span>
-                        <span class="price-period">/ licence à vie</span>
-                    </div>
-                    <div class="pricing-old-price">
-                        <span class="old-price-text">Prix de lancement : </span>
-                        <span class="old-price-amount">79 €</span>
-                    </div>
-                    <div class="pricing-features">
-                        <h4>Ce qui est inclus :</h4>
-                        <ul class="features-list">
-                            <li class="feature-item">
-                                <span class="check-icon">✓</span>
-                                <span>Accès immédiat à la beta</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="check-icon">✓</span>
-                                <span>Licence à vie sur la v1</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="check-icon">✓</span>
-                                <span>Badge Founder exclusif</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="check-icon">✓</span>
-                                <span>Accès Discord privé</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="check-icon">✓</span>
-                                <span>Vote sur la roadmap</span>
-                            </li>
-                            <li class="feature-item">
-                                <span class="check-icon">✓</span>
-                                <span>Garantie remboursement 14 jours</span>
-                            </li>
-                            <li class="feature-item highlight">
-                                <span class="check-icon">✓</span>
-                                <span>Conservation licence v1 même en cas d'abonnement futur</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="https://obsidstudio.lemonsqueezy.com/checkout" class="cta-btn primary full-width">
-                        <span class="btn-text">Devenir Beta Founder</span>
-                        <span class="btn-arrow">→</span>
-                    </a>
-                    <div class="pricing-remaining">
-                        <span class="remaining-dot"></span>
-                        <span id="remainingSpots">100 places disponibles</span>
-                    </div>
-                </div>
-            </div>
-            <div class="pricing-note">
-                <p>
-                    <strong>Stratégie assumée :</strong> OBSID-Studio adoptera peut-être un modèle 
-                    par abonnement pour la v2+. Les Beta Founders conservent leur licence v1 
-                    <strong>à vie</strong>, même dans ce cas. 
-                    <strong>Acheter maintenant = le meilleur deal qui existera jamais.</strong>
-                </p>
-            </div>
-        </div>
+    <section class="gallery section" aria-label="Aperçus d'OBSID Studio">
+      <div class="shell gallery-top reveal"><p class="eyebrow">Des écrans réels, pas des mockups</p><p>Une identité cohérente du cockpit au réglage système.</p></div>
+      <div class="gallery-track">
+        <figure class="reveal" data-lightbox="assets/images/obsid-studio-dark.png" data-caption="OBSID Studio — thème sombre"><img src="assets/images/obsid-studio-dark.png" alt="Interface sombre OBSID Studio"></figure>
+        <figure class="reveal" data-lightbox="assets/images/obsid-studio-obsitools.png" data-caption="OBSIDTOOLS — diagnostic système"><img src="assets/images/obsid-studio-obsitools.png" alt="Espace OBSITOOLS"></figure>
+        <figure class="reveal" data-lightbox="assets/images/obsid-studio-blanc.png" data-caption="OBSID Studio — thème clair"><img src="assets/images/obsid-studio-blanc.png" alt="Interface claire OBSID Studio"></figure>
+      </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Questions Fréquentes</span>
-                <h2 class="section-title">FAQ</h2>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span class="faq-icon">?</span>
-                        <h3>Quelle configuration est requise ?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            <strong>Minimum :</strong> Windows 10/11 x64, 16 Go RAM, GPU dédié.<br>
-                            <strong>Recommandé :</strong> Windows 11 x64, 32 Go RAM, GPU NVIDIA 8 Go+ 
-                            (pour la génération d'images/vidéo).
-                        </p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span class="faq-icon">?</span>
-                        <h3>Mes données restent-elles locales ?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            <strong>Oui, 100%.</strong> Aucune donnée ne quitte votre machine. 
-                            Pas de télémétrie, pas de tracking, pas de cloud caché. 
-                            OBSID-Studio est conçu pour le local-first.
-                        </p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span class="faq-icon">?</span>
-                        <h3>Quelle est la différence avec les IA cloud ?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            Avec le cloud, vous payez à l'usage, vos données sont 
-                            sur des serveurs distants, et vous dépendez de la connexion. 
-                            Avec OBSID-Studio : <strong>un paiement unique</strong>, 
-                            <strong>tout sur votre PC</strong>, <strong>illimité</strong>.
-                        </p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span class="faq-icon">?</span>
-                        <h3>Comment fonctionne la licence ?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            Licence par machine, activation par clé. Une clé = une installation. 
-                            La licence Beta Founder est valable à vie pour la v1, 
-                            même si le modèle commercial évolue.
-                        </p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span class="faq-icon">?</span>
-                        <h3>Puis-je me faire rembourser ?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            Oui, garantie remboursement de 14 jours sans justification. 
-                            Si vous n'êtes pas satisfait, contactez-nous.
-                        </p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span class="faq-icon">?</span>
-                        <h3>Quelle est la roadmap ?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            Les Beta Founders votent pour les priorités. 
-                            v1.0 : Stabilité et fonctionnalités de base.<br>
-                            v1.x : Nouveaux moteurs, optimisations.<br>
-                            v2.0+ : À définir avec la communauté.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <section class="beta section" id="beta">
+      <div class="shell beta-wrap reveal">
+        <div class="beta-copy">
+          <p class="eyebrow"><span></span> Programme de lancement</p>
+          <h2>Entre dans la beta<br><i>avec une licence qui reste.</i></h2>
+          <p>La Beta Founder est faite pour les personnes qui veulent utiliser le produit, le pousser et participer à ce qu’il devient. Ce n’est pas une promesse de perfection : c’est un accès prioritaire à une évolution active.</p>
+          <p class="beta-note">Windows 10/11 x64, 16 Go de RAM minimum. GPU dédié conseillé ; une NVIDIA avec 8 Go+ est recommandée pour les usages créatifs lourds.</p>
         </div>
+        <aside class="pricing-card" aria-label="Offre Beta Founder">
+          <div class="pricing-top"><span>Beta Founder</span><span>V1.x</span></div>
+          <p class="pricing-kicker">Accès de lancement</p>
+          <div class="price"><sup>€</sup>29 <del>79 €</del></div>
+          <p class="price-sub">Paiement unique · 1 machine</p>
+          <ul>
+            <li><span>✓</span> Licence v1.x à vie</li>
+            <li><span>✓</span> Mises à jour v1.x incluses</li>
+            <li><span>✓</span> Support et espace Founder</li>
+            <li><span>✓</span> Remboursement sous 14 jours</li>
+          </ul>
+          <a class="button button-primary full" href="https://obsidstudio.lemonsqueezy.com/checkout">Accéder à la beta <span aria-hidden="true">↗</span></a>
+          <small>Les conditions de licence s’appliquent à l’achat.</small>
+        </aside>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="assets/images/obsid_studio_1024x1024.png" alt="OBSID-Studio" class="footer-logo">
-                    <p class="footer-tagline">Local AI Creative Reactor</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Légal</h4>
-                        <a href="LICENSE.md" class="footer-link">EULA / Licence</a>
-                        <a href="#" class="footer-link">Mentions Légales</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Contact</h4>
-                        <a href="mailto:contact@obsid-studio.com" class="footer-link">contact@obsid-studio.com</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Florian HFK - Tous droits réservés</p>
-                <p class="footer-note">OBSID-Studio est un produit propriétaire. Aucune partie ne peut être reproduite sans autorisation.</p>
-            </div>
+    <section class="faq section" id="faq">
+      <div class="shell faq-grid">
+        <div class="reveal"><p class="eyebrow">Avant de lancer</p><h2>Les réponses<br><i>sans le baratin.</i></h2></div>
+        <div class="faq-list reveal">
+          <details><summary>Est-ce vraiment local ? <span>+</span></summary><p>OBSID Studio est conçu autour d’un fonctionnement local-first : les moteurs et modèles que tu choisis tournent sur ta machine. Certaines intégrations facultatives peuvent naturellement nécessiter Internet.</p></details>
+          <details><summary>Quelle machine faut-il ? <span>+</span></summary><p>Windows 10 ou 11 x64, 16 Go de RAM minimum et GPU dédié. Pour l’image et la vidéo, 32 Go de RAM et une GPU NVIDIA avec 8 Go ou plus donnent une expérience nettement plus confortable.</p></details>
+          <details><summary>La beta implique quoi ? <span>+</span></summary><p>Tu accèdes à un produit vivant : des améliorations arrivent, certains moteurs dépendent de ta configuration et le retour utilisateur compte réellement dans les priorités.</p></details>
+          <details><summary>Quelle est la licence ? <span>+</span></summary><p>Une licence Beta Founder active une machine et reste valable pour la branche v1.x. Les conditions détaillées sont accessibles ci-dessous.</p></details>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- Lightbox for Screenshots -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
-        <div class="lightbox-content">
-            <img src="" alt="" class="lightbox-img" id="lightboxImg">
-            <p class="lightbox-caption" id="lightboxCaption"></p>
-        </div>
+  <footer class="site-footer">
+    <div class="shell footer-top">
+      <a class="brand" href="#top"><span class="brand-mark"><img src="assets/images/obsid_studio_1024x1024.png" alt=""></span><span><strong>OBSID</strong><em> Studio</em></span></a>
+      <p>Local AI Creative Reactor.<br>Création, intelligence, contrôle.</p>
+      <a href="mailto:contact@obsid-studio.com">contact@obsid-studio.com <span>↗</span></a>
     </div>
+    <div class="shell footer-bottom"><span>© 2026 Florian HFK</span><a href="LICENSE.md">Licence utilisateur</a><span>Windows local-first</span></div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="assets/app.js"></script>
+  <dialog class="lightbox" data-lightbox-dialog>
+    <button type="button" class="lightbox-close" aria-label="Fermer">×</button>
+    <img src="" alt="">
+    <p></p>
+  </dialog>
+  <script src="assets/app.js"></script>
 </body>
 </html>
